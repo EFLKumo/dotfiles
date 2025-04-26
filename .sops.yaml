@@ -1,0 +1,7 @@
+keys:
+  - &efl-nix age1q8332uuxust6e558xj3c535xtrq3ms0v3hdwqdf27ncjukgy0g9sdpd8hh
+creation_rules:
+  - path_regex: secrets/.*\.(yaml|toml|json|env|dae|txt|conf)$
+    key_groups:
+      - age:
+        - *efl-nix
