@@ -18,7 +18,7 @@ lib.my.makeHomeProgramConfig {
       nativeMessagingHosts = [ pkgs.firefoxpwa ];
     };
     my.persist.homeDirs = [
-      ".mozilla"
+      ".zen"
     ];
   };
 }
