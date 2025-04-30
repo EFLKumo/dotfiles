@@ -107,13 +107,6 @@
     keyboards.default.settings = {
       main = {
         capslock = "overload(control, esc)";
-        home = "end";
-      };
-      shift = {
-        home = "home";
-      };
-      control = {
-        delete = "print";
       };
     };
   };
