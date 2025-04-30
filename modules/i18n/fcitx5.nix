@@ -35,14 +35,14 @@ lib.my.makeSwitch {
             "Groups/0" = {
               "Name" = "Default";
               "Default Layout" = "us";
-              "DefaultIM" = "Shuangpin";
+              "DefaultIM" = "pinyin";
             };
             "Groups/0/Items/0" = {
               "Name" = "keyboard-us";
               "Layout" = "";
             };
             "Groups/0/Items/1" = {
-              "Name" = "Shuangpin";
+              "Name" = "pinyin";
               "Layout" = "";
             };
             "GroupOrder"."0" = "Default";
