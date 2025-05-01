@@ -16,8 +16,8 @@ lib.my.makeSwitch {
     my.home = {
       home.packages = with pkgs; [
         nodejs
-        nodePackages.npm
-
+        # nodePackages.npm
+        pnpm
         typescript
       ];
       home.file.".npmrc".text = ''
@@ -26,8 +26,9 @@ lib.my.makeSwitch {
       '';
     };
     my.persist.homeDirs = [
-      ".npm"
-      ".npm-global"
+      # ".npm"
+      # ".npm-global"
+      ".local/share/pnpm"
     ];
   };
 }

@@ -21,6 +21,7 @@ lib.my.makeHomeProgramConfig {
     };
     my.persist.homeDirs = [
       ".config/VSCodium"
+      ".vscode-oss"
     ];
   };
 }

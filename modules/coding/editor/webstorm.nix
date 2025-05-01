@@ -18,7 +18,8 @@ lib.my.makeHomePackageConfig {
   ];
   extraConfig = {
     my.persist.homeDirs = [
-
+      ".config/JetBrains"
+      ".local/share/JetBrains"
     ];
   };
 }
