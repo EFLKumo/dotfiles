@@ -1,6 +1,6 @@
 rec {
   username = "efl";
-  userfullname = "eflkumo";
+  userfullname = "EFLKumo";
   userdesc = userfullname;
   useremail = "eflkumo@duck.com";
   arch = {

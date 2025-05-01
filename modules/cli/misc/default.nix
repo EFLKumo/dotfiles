@@ -2,8 +2,8 @@
   config,
   lib,
   pkgs,
+  username,
   userfullname,
-  useremail,
   ...
 }:
 lib.my.makeSwitch {
@@ -51,8 +51,21 @@ lib.my.makeSwitch {
       programs.git = {
         enable = true;
         userName = "${userfullname}";
-        userEmail = "${useremail}";
+        # userEmail = "${useremail}";
+        userEmail = "96906415+EFLKumo@users.noreply.github.com";
+
+        signing = {
+          format = "ssh";
+          # use extraConfig.user.signingkey instead
+          # key = /persistent/home/${username}/.ssh/github_ed25519.pub;
+          signByDefault = true;
+        };
+
         extraConfig = {
+          commit.gpgsign = true;
+          gpg.format = "ssh";
+          user.signingkey = "/persistent/home/${username}/.ssh/github_ed25519.pub";
+          
           pull.rebase = true;
           push.autoSetupRemote = true;
           init.defaultBranch = "main";
