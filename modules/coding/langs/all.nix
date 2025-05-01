@@ -9,8 +9,8 @@ lib.my.makeSwitch {
   ];
   config' = {
     my.coding.langs = {
-      c.enable = true;
-      go.enable = true;
+      c.enable = false;
+      go.enable = false;
       js.enable = true;
       python.enable = true;
       rust.enable = true;
