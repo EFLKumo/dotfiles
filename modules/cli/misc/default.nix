@@ -56,16 +56,11 @@ lib.my.makeSwitch {
 
         signing = {
           format = "ssh";
-          # use extraConfig.user.signingkey instead
-          # key = /persistent/home/${username}/.ssh/github_ed25519.pub;
+          key = "/persistent/home/${username}/.ssh/github_ed25519.pub";
           signByDefault = true;
         };
 
         extraConfig = {
-          commit.gpgsign = true;
-          gpg.format = "ssh";
-          user.signingkey = "/persistent/home/${username}/.ssh/github_ed25519.pub";
-          
           pull.rebase = true;
           push.autoSetupRemote = true;
           init.defaultBranch = "main";

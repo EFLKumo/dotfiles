@@ -94,15 +94,13 @@
     coding.all.enable = true;
     desktop.all.enable = true;
 
-    desktop.browser.librewolf.enable = lib.mkForce false;
-
     i18n.fcitx5.enable = true;
 
     xdg = {
       enable = true;
       defaultApplications =
         let
-          browser = [ "chromium-browser.desktop" ];
+          browser = [ "zen-beta.desktop" ];
           editor = [ "codium.desktop" ];
           imageviewer = [ "org.gnome.Shotwell-Viewer.desktop" ];
         in
