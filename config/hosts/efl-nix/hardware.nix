@@ -7,6 +7,7 @@
 }:
 let
   btrfs = "/dev/disk/by-uuid/f25c9de2-86fd-41e1-9f1f-90dff4ee5287";
+  ntfs = "/dev/disk/by-uuid/06CA0E1ACA0E06A1";
 in
 {
   boot = {
@@ -48,6 +49,11 @@ in
     fsType = "btrfs";
     options = [ "subvol=persistent" ];
     neededForBoot = true;
+  };
+
+  fileSystems."/win" = {
+    device = ntfs;
+    fsType = "ntfs";
   };
 
   boot.initrd.postDeviceCommands = lib.mkAfter ''
