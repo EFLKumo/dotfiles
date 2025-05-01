@@ -6,7 +6,7 @@
 }:
 lib.my.makeHomeProgramConfig {
   inherit config;
-  programName = "neovim";
+  programName = "vscode";
   optionPath = [
     "coding"
     "editor"

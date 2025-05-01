@@ -11,6 +11,8 @@ lib.my.makeSwitch {
     my.coding.editor = {
       neovim.enable = true;
       vscode.enable = true;
+      webstorm.enable = true;
+      obsidian.enable = true;
     };
   };
 }
