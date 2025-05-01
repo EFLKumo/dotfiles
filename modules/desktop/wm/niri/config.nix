@@ -99,7 +99,7 @@
       [
         "${lib.getExe pkgs.swaybg}"
         "-i"
-        (toString ./wallpaper.png)
+        (toString ./wallpaper.jpg)
       ]
       [
         "${lib.getExe pkgs.wl-clip-persist}"
