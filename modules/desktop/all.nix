@@ -14,6 +14,7 @@ lib.my.makeSwitch {
       notify.all.enable = true;
       screencast.all.enable = true;
       terminal.all.enable = true;
+      util.all.enable = true;
       wm.all.enable = true;
       style.enable = true;
       quickshell.enable = true;
