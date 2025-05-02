@@ -78,21 +78,6 @@ in
       programs.waybar = {
         enable = true;
         systemd.enable = true;
-        settings = {
-          mainBar = {
-            battery = {
-              bat = "BATO";
-              adapter = "AC";
-              full-at = 98;
-              states = {
-                warning = 30;
-                critical = 15;
-              };
-              format = "{capacity}% {icon}";
-              # format-icons =
-            };
-          };
-        };
       };
       xdg.configFile."waybar/config.jsonc".text = builtins.toJSON (import ./waybar/config.nix args);
       xdg.configFile."waybar/style.css" = {
