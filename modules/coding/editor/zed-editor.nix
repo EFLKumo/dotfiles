@@ -20,6 +20,7 @@ lib.my.makeHomeProgramConfig {
       };
     };
     my.persist.homeDirs = [
+      ".config/zed"
       ".local/share/zed"
     ];
   };
