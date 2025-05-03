@@ -135,7 +135,7 @@
           "kitty"
           "-1"
         ];
-        "Mod+G".action.spawn = [ "zen-browser" ];
+        "Mod+Z".action.spawn = [ "zen-beta" ];
         "Mod+E".action.spawn = [ "nemo" ];
         "Mod+R".action.spawn = [
           "sh"
@@ -240,10 +240,13 @@
         "Mod+Shift+Equal".action.set-window-height = "+10%";
 
         "Ctrl+Alt+A".action = screenshot;
-        # "Print".action = screenshot-screen;
+        # https://github.com/sodiboo/niri-flake/issues/922
+        "Print".action.screenshot-screen = [ ];
         "Alt+Print".action = screenshot-window;
 
         "Mod+Shift+E".action = quit;
+
+        "Super+Tab".action = toggle-overview;
       }
       // lib.attrsets.mergeAttrsList (
         map (n: {
