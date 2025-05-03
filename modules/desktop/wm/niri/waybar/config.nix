@@ -12,6 +12,7 @@
     "clock"
     "cpu"
     "memory"
+    "battery"
     "niri/workspaces"
   ];
   modules-center = [
@@ -37,6 +38,20 @@
     interval = 10;
     format = " {used:0.1f}G";
     max-length = 10;
+  };
+  battery = {
+    format = "{capacity}% {icon}";
+    format-icons = [
+      ""
+      ""
+      ""
+      ""
+      ""
+    ];
+    states = {
+      warning = 30;
+      critical = 15;
+    };
   };
   "custom/notification" = {
     tooltip = false;

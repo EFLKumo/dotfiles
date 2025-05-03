@@ -109,6 +109,7 @@ tooltip * {
 #mpd,
 #mpris,
 #cpu,
+#battery,
 #memory,
 #backlight {
     background: #1e1e2e;
@@ -212,9 +213,16 @@ window#waybar.empty #window {
     border-right: 0;
 }
 
-#memory {
+#battery {
     color: #fab387;
     border-radius: 0px 10px 10px 0px;
+    border-left: 0;
+    border-right: 0;
+}
+
+#memory {
+    color: #fab387;
+    border-radius: 0px;
     border-left: 0;
     border-right: 0;
 }
