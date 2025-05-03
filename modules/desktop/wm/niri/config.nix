@@ -91,10 +91,6 @@
     };
 
     spawn-at-startup = map (c: { command = c; }) [
-      [
-        "alacritty"
-        "--daemon"
-      ]
       [ "${lib.getExe pkgs.xwayland-satellite-unstable}" ]
       [
         "${lib.getExe pkgs.swaybg}"
@@ -128,21 +124,18 @@
       with config.my.home.lib.niri.actions;
       {
         "Ctrl+Alt+T".action.spawn = [
-          "alacritty"
-          "msg"
-          "create-window"
+          "kitty"
+          "-1"
         ];
         "Mod+T".action.spawn = [
-          "alacritty"
-          "msg"
-          "create-window"
+          "kitty"
+          "-1"
         ];
         "Mod+Return".action.spawn = [
-          "alacritty"
-          "msg"
-          "create-window"
+          "kitty"
+          "-1"
         ];
-        "Mod+G".action.spawn = [ "chromium" ];
+        "Mod+G".action.spawn = [ "zen-browser" ];
         "Mod+E".action.spawn = [ "nemo" ];
         "Mod+R".action.spawn = [
           "sh"
