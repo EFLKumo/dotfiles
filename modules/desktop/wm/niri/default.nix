@@ -60,7 +60,7 @@ in
       home.packages = with pkgs; [
         wlr-randr
         wl-clipboard
-        wl-clip-persist
+        # wl-clip-persist
         cliphist
         swaynotificationcenter
         nemo-with-extensions
