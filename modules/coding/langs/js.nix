@@ -29,6 +29,11 @@ lib.my.makeSwitch {
       ".npm"
       ".npm-global"
       ".local/share/pnpm"
+
+      # @anthropic-ai/claude-code
+      ".claude"
+      # @openai/codex
+      ".codex"
     ];
   };
 }
