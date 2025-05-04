@@ -27,7 +27,7 @@ lib.my.makeSwitch {
     };
     my.persist.homeDirs = [
       ".npm"
-      # ".npm-global"
+      ".npm-global"
       ".local/share/pnpm"
     ];
   };
