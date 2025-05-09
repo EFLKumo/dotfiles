@@ -150,7 +150,10 @@
         ".android"
         "Android"
 
-        ".ssh"
+        {
+          directory = ".ssh";
+          mode = "0700";
+        }
 
         "bin"
         "workspace"
