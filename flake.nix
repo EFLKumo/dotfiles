@@ -62,7 +62,6 @@
     {
       self,
       nixpkgs,
-      nixos-wsl,
       ...
     }@inputs:
     let
@@ -160,7 +159,6 @@
             inherit
               inputs
               outputs
-              nixos-wsl
               hostname
               ;
 
