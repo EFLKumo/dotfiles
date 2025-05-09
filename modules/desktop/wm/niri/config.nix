@@ -98,6 +98,7 @@
         (toString ./wallpaper.jpg)
       ]
       [
+        # Disable due to wl-clip-persist bugs
         # "${lib.getExe pkgs.wl-clip-persist}"
         # "--clipboard"
         # "regular"

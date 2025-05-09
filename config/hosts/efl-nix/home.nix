@@ -33,10 +33,7 @@
         PATH = "/home/${username}/bin:$PATH";
       };
       profileExtra = ''
-        if [ `tty` = "/dev/tty1" -a $XDG_RUNTIME_DIR ]; then
-          echo 'Starting Niri...'
-          exec uwsm start niri-uwsm.desktop
-        elif [ `tty` = "/dev/tty6" ]; then
+        if [ `tty` = "/dev/tty6" ]; then
           clear
         fi
       '';
@@ -88,10 +85,7 @@
     autologin = {
       enable = true;
       user = username;
-      ttys = [
-        1
-        6
-      ];
+      ttys = [ 6 ];
     };
 
     gpg.enable = true;
