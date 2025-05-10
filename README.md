@@ -13,7 +13,9 @@ If you do not have NixOS installed, please navigate to the Install NixOS section
 6. Run `make encrypt` to encrypt all `secrets/origin/` files into `secrets/`
 7. `make`
 
-This configuration employs NetworkManager so if you're not using WLAN, please disable it.
+*Add wallpaper at modules/desktop/wm/niri/wallpaper.jpg*
+
+*This configuration employs NetworkManager so if you're not using WLAN, please disable it.*
 
 ## Install NixOS
 
