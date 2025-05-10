@@ -13,6 +13,7 @@ lib.my.makeSwitch {
       foot.enable = false;
       kitty.enable = true;
       ghostty.enable = false;
+      gnome-console.enable = true;
     };
   };
 }

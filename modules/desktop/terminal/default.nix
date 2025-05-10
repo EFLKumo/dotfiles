@@ -6,5 +6,6 @@
     ./foot
     ./kitty
     ./ghostty
+    ./gnome-console
   ];
 }
