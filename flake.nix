@@ -139,7 +139,6 @@
                 inputs.sops-nix.homeManagerModules.sops
                 inputs.impermanence.nixosModules.home-manager.impermanence
                 inputs.stylix.homeManagerModules.stylix
-                inputs.niri.homeModules.niri
                 inputs.zen-browser.homeModules.beta
                 # workaround for annoying stylix
                 {
@@ -171,6 +170,7 @@
             inputs.sops-nix.nixosModules.sops
             inputs.impermanence.nixosModules.impermanence
             inputs.home-manager.nixosModules.default
+            inputs.niri.nixosModules.niri
             home
             pkgsConf
           ];
