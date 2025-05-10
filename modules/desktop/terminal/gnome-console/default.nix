@@ -1,7 +1,13 @@
-{ config, lib, ... }:
-lib.my.makeHomeProgramConfig {
-  inherit config;
-  programName = "gnome-console";
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
+lib.my.makeHomePackageConfig {
+  inherit config pkgs;
+  packageName = "gnome-console";
+  packagePath = [ "gnome-console" ];
   optionPath = [
     "desktop"
     "terminal"
