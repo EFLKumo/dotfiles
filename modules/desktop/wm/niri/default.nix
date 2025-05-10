@@ -45,7 +45,7 @@ in
       enable = true;
       package = pkg;
     };
-    
+
     services.displayManager = {
       autoLogin = {
         enable = true;
