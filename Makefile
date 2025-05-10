@@ -1,14 +1,23 @@
 all: fmt switch
 
 switch:
-	@echo "🔨🌐 Rebuilding NixOS..."
+	@echo "🔨 Rebuilding NixOS..."
 	@nixos-rebuild switch --flake . --use-remote-sudo
 	@echo "🎉 Done."
 
 switch-offline:
-	@echo "🔨⚡ Rebuilding NixOS without Internet..."
+	@echo "🔨 Rebuilding NixOS without Internet..."
 	@nixos-rebuild switch --flake  . --no-net --use-remote-sudo
 	@echo "🎉 Done."
+
+switch-nobuild:
+	@echo "🔨⚡ Rebuilding NixOS without building packages..."
+	@nixos-rebuild switch --flake  . --fast --use-remote-sudo
+	@echo "🎉 Done."
+
+switch-slow:
+	@echo "🔨 Rebuilding NixOS with limited cores..."
+	@nixos-rebuild switch --flake . -j 2 --use-remote-sudo
 
 boot:
 	@echo "🔨 Rebuilding NixOS..."
