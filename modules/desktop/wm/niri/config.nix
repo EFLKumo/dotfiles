@@ -137,6 +137,12 @@
         ];
         "Mod+Z".action.spawn = [ "zen-beta" ];
         "Mod+E".action.spawn = [ "nemo" ];
+        "Mod+D".action.spawn = [
+          "codium"
+          "--enable-wayland-ime"
+          "--wayland-text-input-version=3"
+          "--ozone-platform=wayland"
+        ];
         "Mod+R".action.spawn = [
           "sh"
           "-c"
