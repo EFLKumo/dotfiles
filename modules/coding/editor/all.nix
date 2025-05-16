@@ -14,6 +14,7 @@ lib.my.makeSwitch {
       webstorm.enable = false;
       obsidian.enable = true;
       zed-editor.enable = false;
+      notion-app.enable = false;
     };
   };
 }
