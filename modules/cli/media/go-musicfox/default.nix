@@ -16,6 +16,7 @@ lib.my.makeSwitch {
     my = {
       home = {
         home.packages = with pkgs; [
+          brightnessctl
           playerctl
           go-musicfox
         ];
