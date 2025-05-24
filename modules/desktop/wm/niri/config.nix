@@ -92,6 +92,7 @@
 
     spawn-at-startup = map (c: { command = c; }) [
       [ "${lib.getExe pkgs.xwayland-satellite-unstable}" ]
+      [ "${lib.getExe' pkgs.swaynotificationcenter "swaync"}" ]
       [
         "${lib.getExe pkgs.swaybg}"
         "-i"
@@ -197,6 +198,22 @@
             "previous"
           ];
         };
+        "XF86MonBrightnessUp" = {
+          allow-when-locked = true;
+          action.spawn = [
+            "brightnessctl"
+            "set"
+            "+5%"
+          ]
+        }
+        "XF86MonBrightnessDown" = {
+          allow-when-locked = true;
+          action.spawn = [
+            "brightnessctl"
+            "set"
+            "5%-"
+          ]
+        }
 
         "Mod+Q".action = close-window;
 
