@@ -6,5 +6,6 @@
     ./misc
     ./monitor
     ./shell
+    ./claude-code.nix
   ];
 }

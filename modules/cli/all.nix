@@ -12,6 +12,7 @@ lib.my.makeSwitch {
       misc.enable = true;
       monitor.all.enable = true;
       shell.all.enable = true;
+      claude-code.enable = true;
     };
   };
 }
