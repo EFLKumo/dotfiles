@@ -1,5 +1,4 @@
-{ ... }:
-{
+_: {
   imports = [
     ./all.nix
     ./mpv.nix

@@ -1,5 +1,4 @@
-{ ... }:
-{
+_: {
   imports = [
     ./nixos.nix
     ./hardware.nix
