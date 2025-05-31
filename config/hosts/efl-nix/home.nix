@@ -151,6 +151,7 @@
 
         "bin"
         "workspace"
+        "Downloads"
         "WineApps"
         "Virt"
 
