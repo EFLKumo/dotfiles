@@ -54,7 +54,15 @@ in
       sddm = {
         enable = true;
         wayland.enable = true;
-        extraPackages = [ pkgs.where-is-my-sddm-theme ];
+        theme = "where_is_my_sddm_theme";
+        extraPackages = [
+          (pkgs.where-is-my-sddm-theme.override {
+            variants = [ "qt6" ];
+            themeConfig.General = {
+              background = toString ./wallpaper.png;
+            };
+          })
+        ];
       };
     };
 

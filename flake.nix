@@ -138,7 +138,7 @@
               sharedModules = [
                 inputs.sops-nix.homeManagerModules.sops
                 inputs.impermanence.nixosModules.home-manager.impermanence
-                inputs.stylix.homeManagerModules.stylix
+                inputs.stylix.homeModules.stylix
                 inputs.zen-browser.homeModules.beta
                 # workaround for annoying stylix
                 {
