@@ -2,6 +2,7 @@
   config,
   lib,
   username,
+  pkgs,
   ...
 }:
 {
