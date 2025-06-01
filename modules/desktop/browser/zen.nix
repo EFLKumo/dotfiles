@@ -15,6 +15,10 @@ lib.my.makeHomeProgramConfig {
   extraConfig = {
     my.home.programs.zen-browser = {
       enable = true;
+      policies = {
+        DisableAppUpdate = true;
+        DisableTelemetry = true;
+      };
       nativeMessagingHosts = [ pkgs.firefoxpwa ];
     };
     my.persist.homeDirs = [
