@@ -3,5 +3,6 @@ _: {
     ./all.nix
     ./cage.nix
     ./niri
+    ./hyprland
   ];
 }
