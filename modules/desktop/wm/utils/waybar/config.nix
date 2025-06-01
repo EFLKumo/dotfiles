@@ -20,12 +20,11 @@ in
     "cpu"
     "memory"
     "battery"
-    "hyprland/workspaces"
-    "niri/workspaces"
+    # wm-specified config is defined in ../waybar.nix
+    # "niri/workspaces"
+    # "hyprland/workspaces"
   ];
-  modules-center = [
-    "mpris"
-  ];
+  modules-center = [ "mpris" ];
   modules-right = [
     "custom/notification"
     "tray"
@@ -57,11 +56,13 @@ in
     max-length = 10;
     on-click = "";
   };
+
   memory = {
     interval = 10;
     format = " {used:0.1f}G";
     max-length = 10;
   };
+
   battery = {
     format = "{capacity}% {icon}";
     format-icons = [
@@ -76,6 +77,7 @@ in
       critical = 15;
     };
   };
+
   "custom/notification" = {
     tooltip = false;
     format = "{icon}";
@@ -96,11 +98,13 @@ in
     on-click-right = "swaync-client -d -sw";
     escape = true;
   };
+
   tray = {
     icon-size = 13;
     tooltip = false;
     spacing = 10;
   };
+
   mpris = {
     player = "musicfox";
     interval = 1;
@@ -116,10 +120,12 @@ in
     on-scroll-up = "playerctl -p musicfox volume 0.05+";
     on-scroll-down = "playerctl -p musicfox volume 0.05-";
   };
+
   clock = {
     format = " {:%H:%M   %m.%d}";
     tooltip = false;
   };
+
   pulseaudio = {
     format = "{icon} {volume}%";
     tooltip = false;
@@ -143,6 +149,7 @@ in
       ];
     };
   };
+
   "pulseaudio#microphone" = {
     format = "{format_source}";
     tooltip = false;
