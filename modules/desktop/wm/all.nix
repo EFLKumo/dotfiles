@@ -15,7 +15,7 @@ lib.my.makeSwitch {
     my.desktop.wm = {
       cage.enable = true;
       niri.enable = true;
-      hyprland.enable = true;
+      #hyprland.enable = true;
     };
   };
 }
