@@ -355,7 +355,7 @@ in
         in
         [
           (exec "waybar")
-          (exec "${lib.getExe pkgs.swaybg} -i ${./wallpaper.png}")
+          (exec "${lib.getExe pkgs.swaybg} -i ${../wallpaper.jpg}")
           (exec (pkgs.polkit_gnome + /libexec/polkit-gnome-authentication-agent-1))
           (scripts.musicfox true)
         ]

@@ -96,7 +96,7 @@
       [
         "${lib.getExe pkgs.swaybg}"
         "-i"
-        (toString ./wallpaper.jpg)
+        (toString ../wallpaper.jpg)
       ]
       [
         # Disable due to wl-clip-persist bugs
