@@ -53,20 +53,6 @@ in
           )
         } ]
       '';
-      programs.wofi.enable = true;
-      xdg.configFile."wofi" = {
-        source = ./wofi;
-        recursive = true;
-      };
-      xdg.configFile."wal" = {
-        source = ./wal;
-        recursive = true;
-      };
-      programs.waybar.enable = true;
-      xdg.configFile."waybar/config.jsonc".text = builtins.toJSON (import ./waybar/config.nix args);
-      xdg.configFile."waybar/style.css" = {
-        source = ./waybar/style.css;
-      };
 
       home.packages = with pkgs; [
         wlr-randr

@@ -4,6 +4,6 @@ _: {
     ./utils
     ./cage.nix
     ./niri
-    #./hyprland
+    ./hyprland
   ];
 }

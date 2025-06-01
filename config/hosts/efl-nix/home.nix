@@ -28,6 +28,7 @@
       pavucontrol
       pamixer
     ];
+
     programs.zsh = {
       sessionVariables = {
         PATH = "/home/${username}/bin:$PATH";
@@ -94,6 +95,15 @@
     desktop.all.enable = true;
 
     i18n.fcitx5.enable = true;
+
+    desktop.wm.hyprland.monitors = [
+      {
+        name = "preferred";
+        resolution = "2240x1400";
+        position = "0x0";
+        scale = 1.5;
+      }
+    ];
 
     xdg = {
       enable = true;
