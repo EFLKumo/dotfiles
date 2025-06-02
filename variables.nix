@@ -1,8 +1,8 @@
 rec {
   username = "efl";
-  userfullname = "EFLKumo";
-  userdesc = userfullname;
-  useremail = "eflkumo@duck.com";
+  userFullName = "EFLKumo";
+  userDesc = userFullName;
+  userProtectedEmail = "96906415+EFLKumo@users.noreply.github.com";
   arch = {
     aarch64 = {
       linux = "aarch64-linux";

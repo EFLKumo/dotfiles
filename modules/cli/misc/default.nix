@@ -3,7 +3,8 @@
   lib,
   pkgs,
   username,
-  userfullname,
+  userFullName,
+  userProtectedEmail,
   ...
 }:
 lib.my.makeSwitch {
@@ -50,9 +51,8 @@ lib.my.makeSwitch {
       programs.home-manager.enable = true;
       programs.git = {
         enable = true;
-        userName = "${userfullname}";
-        # userEmail = "${useremail}";
-        userEmail = "96906415+EFLKumo@users.noreply.github.com";
+        userName = "${userFullName}";
+        userEmail = "${userProtectedEmail}";
 
         signing = {
           format = "ssh";

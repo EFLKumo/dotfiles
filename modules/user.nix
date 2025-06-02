@@ -3,7 +3,7 @@
   lib,
   pkgs,
   username,
-  userdesc,
+  userDesc,
   sopsRoot,
   ...
 }:
@@ -25,7 +25,7 @@ lib.my.makeSwitch {
       mutableUsers = false;
       users.${username} = {
         isNormalUser = true;
-        description = userdesc;
+        description = userDesc;
         shell = pkgs.zsh;
         extraGroups = [
           "wheel"
