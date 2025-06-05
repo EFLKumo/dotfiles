@@ -36,16 +36,22 @@ in
     on-click = "activate";
     sort-by-number = true;
     format = "{icon}";
-    format-icons = lib.mergeAttrsList (
-      map (
-        nummon:
-        lib.mergeAttrsList (
-          map (numspace: { ${toString (nummon * 10 + numspace)} = builtins.toString numspace; }) (
-            lib.range 1 10
-          )
-        )
-      ) (lib.range 0 (builtins.length monitors - 1))
+    format-icons = builtins.listToAttrs (
+      map (ws: {
+        name = toString ws;
+        value = toString ws;
+      }) (lib.range 1 10)
     );
+    #format-icons = lib.mergeAttrsList (
+    #  map (
+    #    nummon:
+    #    lib.mergeAttrsList (
+    #      map (numspace: { ${toString (nummon * 10 + numspace)} = builtins.toString numspace; }) (
+    #        lib.range 1 10
+    #      )
+    #    )
+    #  ) (lib.range 0 (builtins.length monitors - 1))
+    #);
   };
   "niri/workspaces" = {
     format = "{value}";

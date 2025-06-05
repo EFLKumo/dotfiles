@@ -354,7 +354,7 @@ in
           exec = cmd: "([ $(ps -aux | grep \"${cmd}\" | wc -l) -lt 5 ] && ${cmd})";
         in
         [
-          (exec "waybar")
+          # (exec "waybar")
           (exec "${lib.getExe pkgs.swaybg} -i ${../wallpaper.jpg}")
           (exec (pkgs.polkit_gnome + /libexec/polkit-gnome-authentication-agent-1))
           (scripts.musicfox true)
