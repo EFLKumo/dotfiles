@@ -38,18 +38,17 @@ let
     postBuild = ''
       wrapProgram $out/bin/waybar \
         --run '
-          CONFIG_DIR="$HOME/.config/waybar"
-          WM_CONFIG="$CONFIG_DIR/runtime-config.jsonc"
-          
           if [ -n "$HYPRLAND_INSTANCE_SIGNATURE" ]; then
-            ln -sf "$CONFIG_DIR/config-hyprland.jsonc" "$WM_CONFIG"
+            CFG=config-hyprland.jsonc
           elif [ -n "$NIRI_SOCKET" ]; then
-            ln -sf "$CONFIG_DIR/config-niri.jsonc" "$WM_CONFIG"
+            CFG=config-niri.jsonc
           else
-            ln -sf "$CONFIG_DIR/config-hyprland.jsonc" "$WM_CONFIG"
+            CFG=config-niri.jsonc
           fi
-          
-          set -- -c "$WM_CONFIG" "$@"
+
+          exec $out/bin/waybar.real \
+            -c "$HOME/.config/waybar/$CFG" \
+            "$@"
         '
     '';
   };
