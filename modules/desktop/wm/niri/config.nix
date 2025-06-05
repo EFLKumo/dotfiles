@@ -134,7 +134,8 @@
           "-1"
         ];
         "Mod+Return".action.spawn = [
-          "kgx"
+          "kitty"
+          "-1"
         ];
         "Mod+Z".action.spawn = [ "zen-beta" ];
         "Mod+E".action.spawn = [ "nemo" ];
