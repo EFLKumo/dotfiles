@@ -38,17 +38,16 @@ let
     postBuild = ''
       wrapProgram $out/bin/waybar \
         --run '
+          CONFIG_DIR="$HOME/.config/waybar"
           if [ -n "$HYPRLAND_INSTANCE_SIGNATURE" ]; then
-            CFG=config-hyprland.jsonc
+            CFG="$CONFIG_DIR/config-hyprland.jsonc"
           elif [ -n "$NIRI_SOCKET" ]; then
-            CFG=config-niri.jsonc
+            CFG="$CONFIG_DIR/config-niri.jsonc"
           else
-            CFG=config-niri.jsonc
+            CFG="$CONFIG_DIR/config-niri.jsonc"
           fi
 
-          exec $out/bin/waybar.real \
-            -c "$HOME/.config/waybar/$CFG" \
-            "$@"
+          set -- -c "$CFG" "$@"
         '
     '';
   };
