@@ -7,5 +7,6 @@ _: {
     ./rust.nix
     ./python.nix
     ./lua.nix
+    ./sqlite.nix
   ];
 }
