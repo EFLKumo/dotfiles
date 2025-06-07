@@ -56,7 +56,7 @@ local extra_config = {
         },
         options = {
           nixos = {
-             expr = '(builtins.getFlake ("git+file://" + toString ./.)).nixosConfigurations.imxyy-nix.options',
+             expr = '(builtins.getFlake ("git+file://" + toString ./.)).nixosConfigurations.efl-nix.options',
           },
         },
       }
