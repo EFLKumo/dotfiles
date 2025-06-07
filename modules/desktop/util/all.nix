@@ -11,6 +11,7 @@ lib.my.makeSwitch {
     my.desktop.util = {
       cherry-studio.enable = true;
       figma-linux.enable = true;
+      xmind.enable = true;
     };
   };
 }
