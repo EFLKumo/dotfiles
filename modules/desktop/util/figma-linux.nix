@@ -17,7 +17,7 @@ lib.my.makeHomePackageConfig {
   ];
   extraConfig = {
     my.persist.homeDirs = [
-      
+
     ];
   };
 }
