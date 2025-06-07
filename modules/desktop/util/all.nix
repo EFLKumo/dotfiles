@@ -10,6 +10,7 @@ lib.my.makeSwitch {
   config' = {
     my.desktop.util = {
       cherry-studio.enable = true;
+      figma-linux.enable = true;
     };
   };
 }
