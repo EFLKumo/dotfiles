@@ -170,7 +170,6 @@
         ".local/share/Anki2"
         ".local/share/cheat.sh"
         ".local/share/dooit"
-        ".local/share/keyrings"
         ".local/share/Kingsoft"
         ".local/share/nvim"
         ".local/share/oss.krtirtho.spotube"

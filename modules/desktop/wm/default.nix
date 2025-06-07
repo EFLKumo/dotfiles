@@ -5,5 +5,6 @@ _: {
     ./cage.nix
     ./niri
     ./hyprland
+    ./common.nix
   ];
 }
