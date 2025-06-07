@@ -13,7 +13,7 @@ lib.my.makeSwitch {
       vscode.enable = true;
       webstorm.enable = false;
       obsidian.enable = true;
-      zed-editor.enable = false;
+      zed-editor.enable = true;
       notion-app.enable = false;
     };
   };
