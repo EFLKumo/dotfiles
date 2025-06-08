@@ -1,0 +1,15 @@
+{ config, lib, ... }:
+lib.my.makeSwitch {
+  inherit config;
+  optionName = "all coding tools";
+  optionPath = [
+    "coding"
+    "tools"
+    "all"
+  ];
+  config' = {
+    my.coding.tools = {
+      reqable.enable = true;
+    };
+  };
+}
