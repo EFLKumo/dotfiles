@@ -70,7 +70,16 @@
           command = [
             "sh"
             "-c"
-            "sleep 3; echo 'Xft.dpi: 120' | ${lib.getExe pkgs.xorg.xrdb} -merge"
+            "sleep 3; echo 'Xft.dpi: 150' | ${lib.getExe pkgs.xorg.xrdb} -merge"
+          ];
+        }
+        {
+          command = [
+            "sh"
+            "-c"
+            "sleep 3; ${lib.getExe pkgs.xsettingsd} -c ${pkgs.writeText "xsettingsd.conf" ''
+              Xft/DPI DPI * 1024
+            ''}"
           ];
         }
       ];
