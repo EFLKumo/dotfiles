@@ -1,31 +1,49 @@
 all: fmt switch
 
+ls:
+	@echo "🍽️ Available commands"
+	@echo "- switch"
+	@echo "- switch-offline"
+	@echo "- switch-nobuild"
+	@echo "- switch-slow"
+	@echo "- boot"
+	@echo "- vm"
+	@echo "- update"
+	@echo "- history"
+	@echo "- replpkgs"
+	@echo "- repl"
+	@echo "- cleandry"
+	@echo "- clean"
+	@echo "- gc"
+	@echo "- fmt"
+	@echo "- encrypt"
+
 switch:
 	@echo "🔨 Rebuilding NixOS..."
-	@nixos-rebuild switch --flake . --use-remote-sudo
+	@nixos-rebuild switch --flake . --use-remote-sudo --json |& nom
 	@echo "🎉 Done."
 
 switch-offline:
 	@echo "🔨 Rebuilding NixOS without Internet..."
-	@nixos-rebuild switch --flake  . --no-net --use-remote-sudo
+	@nixos-rebuild switch --flake  . --no-net --use-remote-sudo --json |& nom
 	@echo "🎉 Done."
 
 switch-nobuild:
 	@echo "🔨⚡ Rebuilding NixOS without building packages..."
-	@nixos-rebuild switch --flake  . --fast --use-remote-sudo
+	@nixos-rebuild switch --flake  . --fast --use-remote-sudo --json |& nom
 	@echo "🎉 Done."
 
 switch-slow:
 	@echo "🔨 Rebuilding NixOS with limited cores..."
-	@nixos-rebuild switch --flake . -j 2 --use-remote-sudo
+	@nixos-rebuild switch --flake . -j 2 --use-remote-sudo --json |& nom
 
 boot:
 	@echo "🔨 Rebuilding NixOS..."
-	@nixos-rebuild boot --flake . --use-remote-sudo
+	@nixos-rebuild boot --flake . --use-remote-sudo --json |& nom
 
 vm:
 	@echo "🖥️ Building NixOS VM..."
-	@nixos-rebuild build-vm --flake .
+	@nixos-rebuild build-vm --flake . --json |& nom
 
 update:
 	@echo "↗️ Updating flakes..."
