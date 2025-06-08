@@ -137,14 +137,8 @@
           "kitty"
           "-1"
         ];
-        "Mod+Z".action.spawn = [ "zen-beta" ];
+        "Mod+G".action.spawn = [ "zen-beta" ];
         "Mod+E".action.spawn = [ "nemo" ];
-        "Mod+D".action.spawn = [
-          "codium"
-          "--enable-wayland-ime"
-          "--wayland-text-input-version=3"
-          "--ozone-platform=wayland"
-        ];
         "Mod+R".action.spawn = [
           "sh"
           "-c"
@@ -177,7 +171,7 @@
           action.spawn = [
             "playerctl"
             "-i"
-            "firefox,chromium"
+            "firefox,chromium,zen"
             "play-pause"
           ];
         };
@@ -186,7 +180,7 @@
           action.spawn = [
             "playerctl"
             "-i"
-            "firefox,chromium"
+            "firefox,chromium,zen"
             "next"
           ];
         };
@@ -195,7 +189,7 @@
           action.spawn = [
             "playerctl"
             "-i"
-            "firefox,chromium"
+            "firefox,chromium,zen"
             "previous"
           ];
         };

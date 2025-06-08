@@ -110,7 +110,7 @@
       defaultApplications =
         let
           browser = [ "zen-beta.desktop" ];
-          editor = [ "codium.desktop" ];
+          editor = [ "zed.desktop" ];
           imageviewer = [ "org.gnome.Shotwell-Viewer.desktop" ];
         in
         {
