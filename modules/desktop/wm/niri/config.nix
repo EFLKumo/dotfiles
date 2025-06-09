@@ -17,7 +17,7 @@
     };
     Service = {
       ExecStart = "${lib.getExe pkgs.xwayland-satellite-unstable}";
-      Restart = "on-failure";Add commentMore actions
+      Restart = "on-failure";
     };
     Install.WantedBy = [
       "niri.service"
