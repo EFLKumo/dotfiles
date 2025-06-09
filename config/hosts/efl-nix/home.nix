@@ -70,7 +70,7 @@
           command = [
             "sh"
             "-c"
-            "sleep 3; echo 'Xft.dpi: 150' | ${lib.getExe pkgs.xorg.xrdb} -merge"
+            "sleep 3; echo 'Xft.dpi: 120' | ${lib.getExe pkgs.xorg.xrdb} -merge"
           ];
         }
         {
