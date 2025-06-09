@@ -11,6 +11,7 @@ lib.my.makeSwitch {
     my.coding.tools = {
       reqable.enable = true;
       asar.enable = true;
+      package-version-server.enable = true;
     };
   };
 }
