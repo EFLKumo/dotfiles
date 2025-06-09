@@ -10,6 +10,7 @@ lib.my.makeSwitch {
   config' = {
     my.coding.tools = {
       reqable.enable = true;
+      asar.enable = true;
     };
   };
 }
