@@ -8,5 +8,6 @@ _: {
     ./python.nix
     ./lua.nix
     ./sqlite.nix
+    ./nix.nix
   ];
 }

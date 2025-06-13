@@ -16,6 +16,7 @@ lib.my.makeSwitch {
       rust.enable = true;
       lua.enable = true;
       sqlite.enable = true;
+      nix.enable = true;
     };
   };
 }
