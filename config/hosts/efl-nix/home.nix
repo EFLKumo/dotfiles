@@ -16,9 +16,9 @@
 
       anki
 
+      ayugram-desktop
       telegram-desktop
       signal-desktop
-      discord
       qq
 
       gnome-clocks
