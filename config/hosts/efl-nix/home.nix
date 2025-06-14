@@ -186,7 +186,7 @@
         ".local/share/SteamOS"
         ".local/share/Trash"
 
-        ".local/share/AyugramDesktop"
+        ".local/share/AyuGramDesktop"
         ".local/share/TelegramDesktop"
         ".config/Signal"
         ".config/QQ"

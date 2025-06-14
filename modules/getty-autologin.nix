@@ -30,7 +30,7 @@ let
       builtins.map (ttynum: { "getty@tty${toString ttynum}" = config; }) cfg.ttys
     );
 
-  autologinModule = types.submodule ({
+  autologinModule = types.submodule {
     options = {
       enable = mkEnableOption "autologin";
       user = mkOption {
@@ -49,7 +49,7 @@ let
         '';
       };
     };
-  });
+  };
 
 in
 

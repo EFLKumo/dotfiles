@@ -1,9 +1,6 @@
 {
-  lib,
   pkgs,
-  config,
   username,
-  sopsRoot,
   ...
 }:
 {
