@@ -10,7 +10,8 @@ lib.my.makeSwitch {
   config' = {
     my.desktop.util = {
       cherry-studio.enable = true;
-      xmind.enable = true;
+      xmind.enable = false;
+      keyguard.enable = true;
     };
   };
 }
