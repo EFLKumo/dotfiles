@@ -37,7 +37,7 @@
         sqlite.enable = true;
         nix.enable = true;
       };
-      tools = {
+      tool = {
         reqable.enable = true;
         asar.enable = true;
         package-version-server.enable = true;

@@ -9,7 +9,8 @@ lib.my.makeHomePackageConfig {
   packageName = "claude-code";
   packagePath = [ "claude-code" ];
   optionPath = [
-    "cli"
+    "coding"
+    "tool"
     "claude-code"
   ];
   extraConfig = {

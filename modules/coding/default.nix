@@ -3,6 +3,6 @@ _: {
     ./misc.nix
     ./langs
     ./editor
-    ./tools
+    ./tool
   ];
 }

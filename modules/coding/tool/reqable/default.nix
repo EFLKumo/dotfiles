@@ -12,7 +12,7 @@ lib.my.makeHomePackageConfig {
   ];
   optionPath = [
     "coding"
-    "tools"
+    "tool"
     "reqable"
   ];
   extraConfig = {
