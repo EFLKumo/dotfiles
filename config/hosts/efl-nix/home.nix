@@ -41,27 +41,18 @@
 
     programs.niri.settings = {
       outputs = {
-        DP-2 = {
+        eDP-1 = {
           enable = true;
           mode = {
             width = 2560;
             height = 1440;
-            refresh = 75.033;
+            refresh = 60.0;
           };
-          scale = 1.25;
+          scale = 1.5;
           position = {
             x = 0;
             y = 0;
           };
-        };
-        DP-3 = {
-          enable = true;
-          mode = {
-            width = 2560;
-            height = 1440;
-            refresh = 75.033;
-          };
-          scale = 1.25;
         };
       };
       spawn-at-startup = [

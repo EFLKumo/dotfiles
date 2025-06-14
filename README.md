@@ -3,9 +3,9 @@
 The NixOS configuration I used.
 
 ## Usage
-If you do not have NixOS installed, please navigate to the Install NixOS section below.  
+If you do not have NixOS installed, please navigate to the Install NixOS section below.
 
-1. Harware: modify `config/hosts/efl-nix/hardware.nix`
+1. Harware: modify `config/hosts/efl-nix/hardware.nix`; configure monitors at `config/hosts/efl-nix/home.nix`
 2. Modify `variables.nix`
 3. SOPS: configure sops in `modules/sops.nix`, add your age and ssh keys here
 4. Network: place mihomo.yaml under `secrets/origin`, modify `secrets/origin/dae.dae` as needed
@@ -16,6 +16,12 @@ If you do not have NixOS installed, please navigate to the Install NixOS section
 *Add wallpaper at modules/desktop/wm/niri/wallpaper.jpg*
 
 *This configuration employs NetworkManager so if you're not using WLAN, please disable it.*
+
+## Adding packages / programs
+
+1. Add a .nix file under `modules`
+2. Import it in the nearest `default.nix`
+3. Enable it in `config/hosts/efl-nix/modules.nix`
 
 ## Install NixOS
 
