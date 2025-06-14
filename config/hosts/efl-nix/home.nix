@@ -66,13 +66,13 @@
         {
           command = [
             (toString (
-                        pkgs.writeShellScript "xsettingsd" ''
-                          while :
-                          do
-                            ${lib.getExe pkgs.xsettingsd} -c ${pkgs.writeText "xsettingsd.conf" "Xft/DPI 122880\n"}
-                          done
-                        ''
-                      ))
+              pkgs.writeShellScript "xsettingsd" ''
+                while :
+                do
+                  ${lib.getExe pkgs.xsettingsd} -c ${pkgs.writeText "xsettingsd.conf" "Xft/DPI 122880\n"}
+                done
+              ''
+            ))
           ];
         }
       ];
