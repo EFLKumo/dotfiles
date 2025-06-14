@@ -186,9 +186,9 @@
         ".local/share/SteamOS"
         ".local/share/Trash"
 
+        ".local/share/AyugramDesktop"
         ".local/share/TelegramDesktop"
         ".config/Signal"
-        ".config/discord"
         ".config/QQ"
 
         ".config/sops"
