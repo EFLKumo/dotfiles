@@ -20,26 +20,26 @@ ls:
 
 switch:
 	@echo "🔨 Rebuilding NixOS..."
-	@nixos-rebuild switch --flake . --use-remote-sudo --json |& nom
+	@nixos-rebuild switch --flake . --sudo --json |& nom
 	@echo "🎉 Done."
 
 switch-offline:
 	@echo "🔨 Rebuilding NixOS without Internet..."
-	@nixos-rebuild switch --flake  . --no-net --use-remote-sudo --json |& nom
+	@nixos-rebuild switch --flake  . --no-net --sudo --json |& nom
 	@echo "🎉 Done."
 
 switch-nobuild:
 	@echo "🔨⚡ Rebuilding NixOS without building packages..."
-	@nixos-rebuild switch --flake  . --fast --use-remote-sudo --json |& nom
+	@nixos-rebuild switch --flake  . --fast --sudo --json |& nom
 	@echo "🎉 Done."
 
 switch-slow:
 	@echo "🔨 Rebuilding NixOS with limited cores..."
-	@nixos-rebuild switch --flake . -j 2 --use-remote-sudo --json |& nom
+	@nixos-rebuild switch --flake . -j 2 --sudo --json |& nom
 
 boot:
 	@echo "🔨 Rebuilding NixOS..."
-	@nixos-rebuild boot --flake . --use-remote-sudo --json |& nom
+	@nixos-rebuild boot --flake . --sudo --json |& nom
 
 vm:
 	@echo "🖥️ Building NixOS VM..."
