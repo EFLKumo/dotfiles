@@ -2,7 +2,6 @@ args@{
   lib,
   config,
   pkgs,
-  username,
   ...
 }:
 let
@@ -47,6 +46,7 @@ in
         cliphist
         swaynotificationcenter
         nemo-with-extensions
+        xwayland-satellite-unstable
       ];
       programs.wofi.enable = true;
     };

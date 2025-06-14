@@ -10,20 +10,6 @@
     Service.ExecStart = [ "swaync" ];
   };
 
-  my.home.systemd.user.services.xwayland-satellite = {
-    Unit = {
-      Description = "xwayland-satellite";
-      After = [ "niri.service" ];
-    };
-    Service = {
-      ExecStart = "${lib.getExe pkgs.xwayland-satellite-unstable}";
-      Restart = "on-failure";
-    };
-    Install.WantedBy = [
-      "niri.service"
-    ];
-  };
-
   my.home.programs.niri.settings = {
     input = {
       focus-follows-mouse = {
@@ -101,7 +87,6 @@
       XDG_SESSION_DESKTOP = "niri";
       QT_AUTO_SCREEN_SCALE_FACTOR = "1";
       STEAM_FORCE_DESKTOPUI_SCALING = "1.25";
-      DISPLAY = ":0";
     };
 
     spawn-at-startup = map (c: { command = c; }) [
