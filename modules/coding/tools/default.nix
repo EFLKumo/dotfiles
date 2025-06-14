@@ -1,7 +1,8 @@
 _: {
   imports = [
-    ./reqable
     ./asar
+    ./claude-code
     ./package-version-server
+    ./reqable
   ];
 }

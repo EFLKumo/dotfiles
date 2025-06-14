@@ -17,7 +17,6 @@
       shell = {
         zsh.enable = true;
       };
-      claude-code.enable = true;
     };
     coding = {
       editor = {
@@ -42,6 +41,7 @@
         reqable.enable = true;
         asar.enable = true;
         package-version-server.enable = true;
+        claude-code.enable = true;
       };
       misc.enable = true;
     };
