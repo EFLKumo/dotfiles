@@ -1,6 +1,5 @@
 _: {
   imports = [
-    ./all.nix
     ./mpv.nix
     ./shotwell.nix
     ./thunderbird.nix

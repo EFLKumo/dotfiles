@@ -97,13 +97,6 @@
       ttys = [ 6 ];
     };
 
-    gpg.enable = true;
-    cli.all.enable = true;
-    coding.all.enable = true;
-    desktop.all.enable = true;
-
-    i18n.fcitx5.enable = true;
-
     desktop.wm.hyprland.monitors = [
       {
         name = "preferred";
