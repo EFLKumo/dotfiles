@@ -27,10 +27,6 @@
     # neovim-nightly.url = "github:nix-community/neovim-nightly-overlay";
     # neovim-nightly.inputs.nixpkgs.follows = "nixpkgs";
 
-    # OMZ
-    omz.url = "github:imxyy1soope1/omz/master";
-    omz.inputs.nixpkgs.follows = "nixpkgs";
-
     # Niri
     niri.url = "github:sodiboo/niri-flake";
     niri.inputs.nixpkgs.follows = "nixpkgs";
@@ -113,7 +109,6 @@
           );
           overlays = builtins.attrValues self.overlays ++ [
             inputs.go-musicfox.overlays.default
-            inputs.omz.overlays.default
             inputs.niri.overlays.niri
             inputs.fenix.overlays.default
             (final: prev: {
