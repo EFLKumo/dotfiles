@@ -75,7 +75,8 @@ lib.my.makeSwitch {
             "z"
           ];
           custom = "$HOME/.config/oh-my-zsh-custom";
-          theme = "kumo";
+          # theme = "kumo";
+          theme = "bira";
         };
         xdg.configFile."oh-my-zsh-custom/themes/kumo.zsh-theme".source = ./kumo.zsh-theme;
       };
