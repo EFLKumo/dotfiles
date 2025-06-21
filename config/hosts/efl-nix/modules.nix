@@ -61,6 +61,7 @@
         vlc.enable = true;
         spotify.enable = true;
         spotube.enable = true;
+        onlyoffice.enable = true;
       };
       notify = {
         dunst.enable = true;
@@ -79,7 +80,7 @@
       util = {
         cherry-studio.enable = true;
         xmind.enable = false;
-        keyguard.enable = true;
+        keyguard.enable = false;
       };
       wm = {
         cage.enable = true;

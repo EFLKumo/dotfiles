@@ -6,5 +6,6 @@ _: {
     ./vlc.nix
     ./spotify.nix
     ./spotube.nix
+    ./onlyoffice.nix
   ];
 }
