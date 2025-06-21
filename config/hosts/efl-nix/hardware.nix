@@ -31,6 +31,13 @@ in
     };
   };
 
+  swapDevices = [
+    {
+      device = "/var/lib/swapfile";
+      size = 16384;
+    }
+  ];
+
   fileSystems."/" = {
     device = btrfs;
     fsType = "btrfs";
