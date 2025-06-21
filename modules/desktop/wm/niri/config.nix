@@ -44,12 +44,13 @@
         { proportion = 0.66667; }
       ];
       default-column-width.proportion = 0.4;
+      background-color = "transparent";
     };
 
     animations = {
       enable = true;
       slowdown = 1.5;
-      workspace-switch.spring = {
+      workspace-switch.kind.spring = {
         damping-ratio = 1.0;
         stiffness = 1000;
         epsilon = 0.0001;
@@ -58,6 +59,14 @@
 
     prefer-no-csd = true;
     hotkey-overlay.skip-at-startup = true;
+
+    layer-rules = [
+      {
+        matches = [ { namespace = "^wallpaper$"; } ];
+        place-within-backdrop = true;
+      }
+    ];
+    overview.workspace-shadow.enable = false;
 
     window-rules = [
       {
@@ -93,6 +102,8 @@
       [ "${lib.getExe' pkgs.swaynotificationcenter "swaync"}" ]
       [
         "${lib.getExe pkgs.swaybg}"
+        "-m"
+        "fill"
         "-i"
         (toString ../wallpaper.jpg)
       ]
