@@ -14,11 +14,16 @@ lib.my.makeSwitch {
     "zsh"
   ];
   config' = {
+    my.persist.homeDirs = [ ".local/share/zoxide" ];
     my.home =
       let
         stateHome = config.my.home.xdg.stateHome;
       in
       {
+        home.packages = with pkgs; [
+          fzf
+          zoxide
+        ];
         programs.zsh = {
           enable = true;
           plugins = [
@@ -40,6 +45,15 @@ lib.my.makeSwitch {
                 hash = "sha256-KRsQEDRsJdF7LGOMTZuqfbW6xdV5S38wlgdcCM98Y/Q=";
               };
             }
+            {
+              name = "fzf-tab";
+              src = pkgs.fetchFromGitHub {
+                owner = "Aloxaf";
+                repo = "fzf-tab";
+                rev = "2abe1f2f1cbcb3d3c6b879d849d683de5688111f";
+                hash = "sha256-zc9Sc1WQIbJ132hw73oiS1ExvxCRHagi6vMkCLd4ZhI=";
+              };
+            }
           ];
           dotDir = ".config/zsh";
           history = {
@@ -48,14 +62,11 @@ lib.my.makeSwitch {
               "la"
             ];
           };
-          initContent = ''
-
+          initContent = lib.mkAfter ''
+            eval "$(zoxide init zsh)"
           '';
-          sessionVariables = {
-            _ZL_DATA = "${stateHome}/zlua";
-            _FZF_HISTORY = "${stateHome}/fzf_history";
-          };
           shellAliases = {
+            x = "extract";
             ls = "lsd";
             svim = "sudoedit";
             nf = "neofetch";
@@ -69,10 +80,11 @@ lib.my.makeSwitch {
           plugins = [
             "branch"
             "colorize"
+            "dotenv"
             "extract"
             "git"
+            "git-extras"
             "sudo"
-            "z"
           ];
           custom = "$HOME/.config/oh-my-zsh-custom";
           # theme = "kumo";
