@@ -111,7 +111,7 @@
         {
           "inode/directory" = [ "nemo.desktop" ];
 
-          "application/pdf" = [ "evince.desktop" ];
+          "application/pdf" = [ "org.gnome.Evince.desktop" ];
 
           "text/*" = editor;
           "application/json" = editor;
