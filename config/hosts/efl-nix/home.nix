@@ -55,28 +55,6 @@
           };
         };
       };
-      spawn-at-startup = [
-        {
-          command = [
-            "sh"
-            "-c"
-            "sleep 3; echo 'Xft.dpi: 120' | ${lib.getExe pkgs.xorg.xrdb} -merge"
-          ];
-        }
-        {
-          command = [
-            (toString (
-              pkgs.writeShellScript "xsettingsd" ''
-                pgrep xsettingsd && exit
-                while :
-                do
-                  ${lib.getExe pkgs.xsettingsd} -c ${pkgs.writeText "xsettingsd.conf" "Xft/DPI 122880\n"}
-                done
-              ''
-            ))
-          ];
-        }
-      ];
     };
 
     programs.ssh = {
