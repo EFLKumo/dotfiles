@@ -79,7 +79,7 @@
       };
       util = {
         cherry-studio.enable = true;
-        xmind.enable = false;
+        xmind.enable = true;
         keyguard.enable = false;
       };
       wm = {
