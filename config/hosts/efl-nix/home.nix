@@ -67,6 +67,7 @@
           command = [
             (toString (
               pkgs.writeShellScript "xsettingsd" ''
+                pgrep xsettingsd && exit
                 while :
                 do
                   ${lib.getExe pkgs.xsettingsd} -c ${pkgs.writeText "xsettingsd.conf" "Xft/DPI 122880\n"}
