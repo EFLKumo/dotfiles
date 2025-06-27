@@ -85,7 +85,6 @@
       wm = {
         cage.enable = true;
         niri.enable = true;
-        hyprland.enable = true;
       };
       style.enable = true;
       quickshell.enable = true;

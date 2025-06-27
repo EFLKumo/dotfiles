@@ -8,6 +8,10 @@
     nixpkgs-master.url = "github:nixos/nixpkgs/master";
     # nixpkgs.follows = "nixpkgs-stable";
     nixpkgs.follows = "nixpkgs-unstable";
+    # nixpkgs.follows = "nixpkgs-master";
+
+    # Nyxpkgs
+    chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
 
     # SOPS
     sops-nix.url = "github:Mic92/sops-nix";
@@ -22,10 +26,6 @@
 
     # NUR
     nur.url = "github:nix-community/NUR";
-
-    # NeoVim nightly
-    # neovim-nightly.url = "github:nix-community/neovim-nightly-overlay";
-    # neovim-nightly.inputs.nixpkgs.follows = "nixpkgs";
 
     # Niri
     niri.url = "github:sodiboo/niri-flake";
@@ -71,6 +71,12 @@
             ${hostname} = mkSystem hostname;
           }) (builtins.attrNames (builtins.readDir ./config/hosts))
         );
+
+      lib = (import ./lib/stdlib-extended.nix nixpkgs.lib).extend (
+        final: prev: {
+          inherit (inputs.home-manager.lib) hm;
+        }
+      );
     in
     {
       packages = forAllSystems (system: import ./pkgs nixpkgs.legacyPackages.${system});
@@ -100,13 +106,6 @@
       nixosConfigurations = forAllHosts (
         hostname:
         let
-          lib = import ./lib/stdlib-extended.nix (
-            nixpkgs.lib.extend (
-              final: prev: {
-                inherit (inputs.home-manager.lib) hm;
-              }
-            )
-          );
           overlays = builtins.attrValues self.overlays ++ [
             inputs.go-musicfox.overlays.default
             inputs.niri.overlays.niri
@@ -126,26 +125,32 @@
                 withHyprland = false;
               };
             })
+            (final: prev: {
+              inherit lib;
+            })
           ];
           home = {
             home-manager = {
-              # Home Manager Modules
               sharedModules = [
                 inputs.sops-nix.homeManagerModules.sops
                 inputs.impermanence.nixosModules.home-manager.impermanence
                 inputs.stylix.homeModules.stylix
                 inputs.zen-browser.homeModules.beta
                 # workaround for annoying stylix
-                {
-                  nixpkgs.overlays = lib.mkForce null;
-                }
+                (
+                  { lib, ... }:
+                  {
+                    nixpkgs.overlays = lib.mkForce null;
+                  }
+                )
               ];
               useGlobalPkgs = true;
             };
           };
           pkgsConf.nixpkgs = {
-            overlays = lib.mkForce overlays;
+            inherit overlays;
             config.allowUnfree = true;
+            flake.setNixPath = false;
           };
         in
         lib.nixosSystem {
@@ -155,20 +160,29 @@
               outputs
               hostname
               ;
-
             sopsRoot = ./secrets;
           } // vars;
-          modules = [
-            ./modules
-            ./config/base.nix
-            ./config/hosts/${hostname}
-            inputs.sops-nix.nixosModules.sops
-            inputs.impermanence.nixosModules.impermanence
-            inputs.home-manager.nixosModules.default
-            inputs.niri.nixosModules.niri
-            home
-            pkgsConf
-          ];
+          modules =
+            (lib.umport {
+              paths = [ ./modules ];
+              exclude = [
+                ./modules/virt/types
+                ./modules/desktop/wm/utils/waybar
+              ];
+              recursive = true;
+            })
+            ++ [
+              (lib.mkAliasOptionModule [ "my" "home" ] [ "home-manager" "users" vars.username ])
+              ./config/base.nix
+              ./config/hosts/${hostname}
+              inputs.chaotic.nixosModules.default
+              inputs.sops-nix.nixosModules.sops
+              inputs.impermanence.nixosModules.impermanence
+              inputs.home-manager.nixosModules.default
+              inputs.niri.nixosModules.niri
+              home
+              pkgsConf
+            ];
         }
       );
     };

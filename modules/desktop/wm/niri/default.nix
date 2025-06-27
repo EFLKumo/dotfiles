@@ -1,4 +1,4 @@
-args@{
+{
   lib,
   config,
   pkgs,
@@ -12,10 +12,6 @@ in
   options.my.desktop.wm.niri = {
     enable = lib.mkEnableOption "Niri";
   };
-
-  imports = [
-    (lib.mkIf cfg.enable (import ./config.nix args))
-  ];
 
   config = lib.mkIf cfg.enable {
     xdg.portal.config = {

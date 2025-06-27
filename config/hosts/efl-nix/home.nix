@@ -91,15 +91,6 @@
       ttys = [ 6 ];
     };
 
-    desktop.wm.hyprland.monitors = [
-      {
-        name = "preferred";
-        resolution = "2240x1400";
-        position = "0x0";
-        scale = "1.5";
-      }
-    ];
-
     xdg = {
       enable = true;
       defaultApplications =
