@@ -6,13 +6,6 @@
     cage = prev.cage.overrideAttrs {
       patches = [ ./cage-specify-output-name.patch ];
     };
-    qq = prev.qq.overrideAttrs {
-      preInstall = ''
-        gappsWrapperArgs+=(
-          --prefix GTK_IM_MODULE : fcitx
-        )
-      '';
-    };
   };
 
   # this allows us to access specific version of nixpkgs

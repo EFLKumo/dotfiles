@@ -18,7 +18,17 @@
       ayugram-desktop
       telegram-desktop
       signal-desktop
-      qq
+      (master.qq.overrideAttrs (
+        final: prev: {
+          preInstall =
+            prev.preInstall or ""
+            + ''
+              gappsWrapperArgs+=(
+                --add-flags "\''${NIXOS_OZONE_WL:+\''${WAYLAND_DISPLAY:+--wayland-text-input-version=3}}"
+              )
+            '';
+        }
+      ))
 
       gnome-clocks
 
