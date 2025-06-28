@@ -17,6 +17,7 @@
       shell = {
         zsh.enable = true;
       };
+      util.yazi.enable = true;
     };
     coding = {
       editor = {
