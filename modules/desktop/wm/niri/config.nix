@@ -139,7 +139,11 @@
             "-1"
           ];
           "Mod+G".action.spawn = [ "zen-beta" ];
-          "Mod+E".action.spawn = [ "nemo" ];
+          "Mod+E".action.spawn = [
+            "kitty"
+            "-1"
+            "yazi"
+          ];
           "Mod+R".action.spawn = [
             "sh"
             "-c"
