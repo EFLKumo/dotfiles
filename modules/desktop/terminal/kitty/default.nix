@@ -27,7 +27,7 @@ lib.my.makeHomeProgramConfig {
         size = 14;
       };
       extraConfig = ''
-        include ${./tokyonight-storm.conf}
+        include ${./colors/everforest.conf}
       '';
     };
   };

@@ -22,7 +22,7 @@
         focus-ring.enable = false;
         border = {
           enable = true;
-          width = 4;
+          width = 3;
 
           inactive.color = "#2e2e3eee";
           active.gradient = {
@@ -78,7 +78,7 @@
           draw-border-with-background = false;
         }
         {
-          matches = [ { app-id = "kitty|foot|Alacritty|ghostty|chromium-browser|wofi"; } ];
+          matches = [ { app-id = "kitty|foot|Alacritty|ghostty|chromium-browser"; } ];
           opacity = 0.8;
         }
         {
@@ -103,7 +103,7 @@
           "-m"
           "fill"
           "-i"
-          (toString ./wallpaper.png)
+          (toString ../wallpaper.jpg)
         ]
         [
           "wl-paste"

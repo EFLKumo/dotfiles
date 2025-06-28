@@ -1,12 +1,4 @@
 {
-  config,
-  lib,
-  ...
-}:
-let
-  monitors = builtins.filter (monitor: !monitor.disable) config.my.desktop.wm.hyprland.monitors;
-in
-{
   layer = "top";
   position = "top";
   mod = "dock";
@@ -32,27 +24,6 @@ in
     "pulseaudio#microphone"
   ];
 
-  "hyprland/workspaces" = {
-    on-click = "activate";
-    sort-by-number = true;
-    format = "{icon}";
-    format-icons = builtins.listToAttrs (
-      map (ws: {
-        name = toString ws;
-        value = toString ws;
-      }) (lib.range 1 10)
-    );
-    #format-icons = lib.mergeAttrsList (
-    #  map (
-    #    nummon:
-    #    lib.mergeAttrsList (
-    #      map (numspace: { ${toString (nummon * 10 + numspace)} = builtins.toString numspace; }) (
-    #        lib.range 1 10
-    #      )
-    #    )
-    #  ) (lib.range 0 (builtins.length monitors - 1))
-    #);
-  };
   "niri/workspaces" = {
     format = "{value}";
   };
