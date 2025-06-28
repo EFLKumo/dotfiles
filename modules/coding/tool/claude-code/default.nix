@@ -16,6 +16,7 @@ lib.my.makeHomePackageConfig {
   extraConfig = {
     my.persist.homeDirs = [
       ".claude"
+      ".claude-code-router" # npm: claude-code-router
     ];
   };
 }
