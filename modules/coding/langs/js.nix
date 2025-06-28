@@ -19,6 +19,7 @@ lib.my.makeSwitch {
         # nodePackages.npm
         pnpm
         typescript
+        bun
       ];
       home.file.".npmrc".text = ''
         prefix = ''${HOME}/.npm-global
@@ -26,6 +27,7 @@ lib.my.makeSwitch {
       '';
     };
     my.persist.homeDirs = [
+      ".bun"
       ".npm"
       ".npm-global"
       ".local/share/pnpm"
