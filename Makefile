@@ -3,6 +3,7 @@ all: fmt switch
 ls:
 	@echo "🍽️ Available commands"
 	@echo "- switch"
+	@echo "- switch-remote"
 	@echo "- switch-offline"
 	@echo "- switch-nobuild"
 	@echo "- switch-slow"
@@ -21,6 +22,11 @@ ls:
 switch:
 	@echo "🔨 Rebuilding NixOS..."
 	@nixos-rebuild switch --flake . --sudo --json |& nom
+	@echo "🎉 Done."
+
+switch-remote:
+	@echo "🔗 Rebuilding NixOS using remote server..."
+	@nixos-rebuild switch --flake . --sudo --json --build-host nixremote@10.10.10.1 |& nom
 	@echo "🎉 Done."
 
 switch-offline:

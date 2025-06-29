@@ -3,6 +3,7 @@
 }:
 {
   my = {
+    remote-build.enable = true;
     cli = {
       media = {
         cava.enable = true;
