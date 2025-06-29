@@ -12,8 +12,7 @@
     "cpu"
     "memory"
     "battery"
-    # wm-specified config is defined in ../waybar.nix
-    # "niri/workspaces"
+    "niri/workspaces"
     # "hyprland/workspaces"
   ];
   modules-center = [ "mpris" ];
@@ -27,6 +26,7 @@
   "niri/workspaces" = {
     format = "{value}";
   };
+
   cpu = {
     interval = 1;
     format = "󰞱 {}%";

@@ -22,6 +22,7 @@ in
       type = lib.types.listOf lib.types.str;
       default = [
         "/persistent/home/${username}/.ssh/github_ed25519"
+        "/persistent/home/${username}/.ssh/imxyy"
       ];
     };
   };

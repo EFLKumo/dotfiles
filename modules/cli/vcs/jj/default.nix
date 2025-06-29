@@ -30,7 +30,8 @@ lib.my.makeHomeProgramConfig {
       };
       home.packages = [ pkgs.lazyjj ];
 
-      programs.zsh.plugins = [
+      /*
+        programs.zsh.plugins = [
         {
           name = "zsh-jj";
           src = pkgs.fetchFromGitHub {
@@ -40,7 +41,8 @@ lib.my.makeHomeProgramConfig {
             hash = "sha256-GDHTp53uHAcyVG+YI3Q7PI8K8M3d3i2+C52zxnKbSmw=";
           };
         }
-      ];
+        ];
+      */
     };
   };
 }
