@@ -164,7 +164,6 @@
         ".config/pulse"
         ".config/chromium"
         ".config/go-musicfox/db"
-        ".config/tmux/plugins"
         ".config/pip"
         ".config/obs-studio"
         ".config/libreoffice"

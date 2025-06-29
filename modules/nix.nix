@@ -2,6 +2,7 @@
   inputs,
   config,
   lib,
+  pkgs,
   ...
 }:
 lib.my.makeSwitch {
@@ -20,6 +21,11 @@ lib.my.makeSwitch {
     # Making legacy nix commands consistent as well, awesome!
     nix.nixPath = [ "/etc/nix/path" ];
 
+    environment.systemPackages = with pkgs; [
+      nix-output-monitor
+      nh
+    ];
+
     environment.etc = lib.mapAttrs' (name: value: {
       name = "nix/path/${name}";
       value.source = value.flake;
@@ -30,7 +36,7 @@ lib.my.makeSwitch {
       experimental-features = "nix-command flakes";
       # Deduplicate and optimize nix store
       auto-optimise-store = true;
-      substituters = lib.mkForce [
+      substituters = [
         # "https://mirrors.tuna.tsinghua.edu.cn/nix-channels/store"
         # "https://mirror.sjtu.edu.cn/nix-channels/store"
         "https://mirrors.sjtug.sjtu.edu.cn/nix-channels/store"
@@ -43,13 +49,11 @@ lib.my.makeSwitch {
       ];
     };
 
-    # uncomment to enable auto gc
-    /*
-      nix.gc = {
-        automatic = true;
-        dates = "weekly";
-        options = "--delete-older-than 30d";
-      };
-    */
+    nix.gc = {
+      automatic = true;
+      dates = "weekly";
+      options = "--delete-older-than 30d";
+    };
+
   };
 }

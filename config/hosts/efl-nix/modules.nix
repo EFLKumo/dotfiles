@@ -18,6 +18,7 @@
       };
       shell = {
         zsh.enable = true;
+        tmux.enable = true;
       };
       util.yazi.enable = true;
     };
@@ -60,10 +61,10 @@
       media = {
         mpv.enable = true;
         shotwell.enable = true;
-        thunderbird.enable = true;
+        thunderbird.enable = false;
         vlc.enable = true;
-        spotify.enable = true;
-        spotube.enable = true;
+        spotify.enable = false;
+        spotube.enable = false;
         onlyoffice.enable = true;
       };
       notify = {
@@ -82,7 +83,7 @@
       };
       util = {
         cherry-studio.enable = true;
-        xmind.enable = true;
+        xmind.enable = false;
         keyguard.enable = false;
       };
       wm = {

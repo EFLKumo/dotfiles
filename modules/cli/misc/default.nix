@@ -77,10 +77,6 @@ lib.my.makeSwitch {
         aria2
         socat
 
-        nix-output-monitor
-
-        tmux
-
         trash-cli
 
         cht-sh
@@ -89,7 +85,6 @@ lib.my.makeSwitch {
 
         # translate-shell
       ];
-      xdg.configFile."tmux/tmux.conf".source = ./tmux.conf;
     };
   };
 }
