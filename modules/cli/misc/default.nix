@@ -2,9 +2,6 @@
   config,
   lib,
   pkgs,
-  username,
-  userFullName,
-  userProtectedEmail,
   ...
 }:
 lib.my.makeSwitch {
@@ -49,22 +46,6 @@ lib.my.makeSwitch {
 
     my.home = {
       programs.home-manager.enable = true;
-      programs.git = {
-        enable = true;
-        userName = "${userFullName}";
-        userEmail = "${userProtectedEmail}";
-
-        signing = {
-          format = "ssh";
-          key = "/persistent/home/${username}/.ssh/github_ed25519.pub";
-          signByDefault = true;
-        };
-
-        extraConfig = {
-          push.autoSetupRemote = true;
-          init.defaultBranch = "main";
-        };
-      };
 
       home.packages = with pkgs; [
         lsd

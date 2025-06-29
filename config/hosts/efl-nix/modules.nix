@@ -20,6 +20,10 @@
         zsh.enable = true;
         tmux.enable = true;
       };
+      vcs = {
+        git.enable = true;
+        jj.enable = true;
+      };
       util.yazi.enable = true;
     };
     coding = {
