@@ -1,7 +1,4 @@
 {
-  config,
-  pkgs,
-  sopsRoot,
   ...
 }:
 {
@@ -51,37 +48,5 @@
         }
       '';
     };
-  };
-
-  sops.secrets.dae = {
-    sopsFile = sopsRoot + /dae.dae;
-    format = "binary";
-  };
-
-  services.dae = {
-    enable = true;
-    configFile = config.sops.secrets.dae.path;
-  };
-
-  systemd.services.dae.after = [ "sops-nix.service" ];
-
-  sops.secrets.mihomo = {
-    sopsFile = sopsRoot + /mihomo.yaml;
-    format = "yaml";
-    key = "";
-  };
-  systemd.services.mihomo = {
-    after = [
-      "network.target"
-      "network-online.target"
-      "sops-nix.service"
-    ];
-    wants = [ "network-online.target" ];
-  };
-  services.mihomo = {
-    enable = true;
-    configFile = config.sops.secrets.mihomo.path;
-    tunMode = true;
-    webui = pkgs.metacubexd;
   };
 }

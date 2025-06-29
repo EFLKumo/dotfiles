@@ -4,6 +4,7 @@
 {
   my = {
     remote-build.enable = true;
+    network-proxy.enable = true;
     cli = {
       media = {
         cava.enable = true;
