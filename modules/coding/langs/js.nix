@@ -4,23 +4,29 @@
   pkgs,
   ...
 }:
-lib.my.makeSwitch {
-  inherit config;
-  optionName = "js";
+lib.my.makeHomePackagesConfig {
+  inherit config pkgs;
   optionPath = [
     "coding"
     "langs"
     "js"
   ];
-  config' = {
+  packagePaths = [
+    [ "nodejs" ]
+    [ "pnpm" ]
+    [ "bun" ]
+    [ "typescript" ]
+  ];
+
+  persistHomeDirs = [
+    ".bun"
+    ".npm"
+    ".npm-global"
+    ".local/share/pnpm"
+  ];
+
+  extraConfig = {
     my.home = {
-      home.packages = with pkgs; [
-        nodejs
-        # nodePackages.npm
-        pnpm
-        typescript
-        bun
-      ];
       home.file.".npmrc".text = ''
         prefix = ''${HOME}/.npm-global
         registry = https://registry.npmmirror.com
@@ -29,11 +35,5 @@ lib.my.makeSwitch {
         export PATH=$PATH:$HOME/.npm-global/bin
       '';
     };
-    my.persist.homeDirs = [
-      ".bun"
-      ".npm"
-      ".npm-global"
-      ".local/share/pnpm"
-    ];
   };
 }

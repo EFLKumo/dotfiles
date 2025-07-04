@@ -4,18 +4,15 @@
   pkgs,
   ...
 }:
-lib.my.makeSwitch {
-  inherit config;
-  optionName = "nix";
+lib.my.makeHomePackagesConfig {
+  inherit config pkgs;
   optionPath = [
     "coding"
     "langs"
     "nix"
   ];
-  config' = {
-    my.home.home.packages = with pkgs; [
-      nixd
-      nil
-    ];
-  };
+  packagePaths = [
+    [ "nixd" ]
+    [ "nil" ]
+  ];
 }

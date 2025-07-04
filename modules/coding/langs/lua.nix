@@ -4,17 +4,12 @@
   pkgs,
   ...
 }:
-lib.my.makeSwitch {
-  inherit config;
-  optionName = "lua";
+lib.my.makeHomePackageConfig {
+  inherit config pkgs;
   optionPath = [
     "coding"
     "langs"
     "lua"
   ];
-  config' = {
-    my.home.home.packages = with pkgs; [
-      luajit
-    ];
-  };
+  packagePath = [ "luajit" ];
 }

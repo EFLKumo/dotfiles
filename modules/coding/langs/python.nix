@@ -4,18 +4,15 @@
   pkgs,
   ...
 }:
-lib.my.makeHomePackageConfig {
+lib.my.makeHomePackagesConfig {
   inherit config pkgs;
-  packageName = "python3";
-  packagePath = [ "python3" ];
+  packagePaths = [
+    [ "python3" ]
+    [ "uv" ]
+  ];
   optionPath = [
     "coding"
     "langs"
     "python"
   ];
-  extraConfig = {
-    my.home.home.packages = with pkgs; [
-      uv
-    ];
-  };
 }

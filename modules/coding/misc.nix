@@ -4,23 +4,24 @@
   pkgs,
   ...
 }:
-lib.my.makeSwitch {
-  inherit config;
-  optionName = "misc";
+lib.my.makeHomePackagesConfig {
+  inherit config pkgs;
   optionPath = [
     "coding"
     "misc"
   ];
-  config' = {
+  packagePaths = [
+    [ "gnumake" ]
+    [
+      "github-cli" # gh
+    ]
+  ];
+  persistHomeDirs = [
+    ".local/share/direnv"
+  ];
+  extraConfig = {
     my.home = {
-      home.packages = with pkgs; [
-        gnumake
-        github-cli # gh
-      ];
       programs.direnv.enable = true;
     };
-    my.persist.homeDirs = [
-      ".local/share/direnv"
-    ];
   };
 }

@@ -6,7 +6,6 @@
 }:
 lib.my.makeHomePackageConfig {
   inherit config pkgs;
-  packageName = "webstorm";
   packagePath = [
     "jetbrains"
     "webstorm"
@@ -16,10 +15,8 @@ lib.my.makeHomePackageConfig {
     "editor"
     "webstorm"
   ];
-  extraConfig = {
-    my.persist.homeDirs = [
-      ".config/JetBrains"
-      ".local/share/JetBrains"
-    ];
-  };
+  persistHomeDirs = [
+    ".config/JetBrains"
+    ".local/share/JetBrains"
+  ];
 }

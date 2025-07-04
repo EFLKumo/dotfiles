@@ -4,19 +4,16 @@
   pkgs,
   ...
 }:
-lib.my.makeSwitch {
-  inherit config;
-  optionName = "c";
+lib.my.makeHomePackagesConfig {
+  inherit config pkgs;
   optionPath = [
     "coding"
     "langs"
     "c"
   ];
-  config' = {
-    my.home.home.packages = with pkgs; [
-      gcc
-      clang-tools
-      cmake
-    ];
-  };
+  packagePaths = [
+    [ "gcc" ]
+    [ "clang-tools" ]
+    [ "cmake" ]
+  ];
 }

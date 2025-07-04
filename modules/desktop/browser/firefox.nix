@@ -7,9 +7,7 @@ lib.my.makeHomeProgramConfig {
     "browser"
     "firefox"
   ];
-  extraConfig = {
-    my.persist.homeDirs = [
-      ".mozilla"
-    ];
-  };
+  persistHomeDirs = [
+    ".mozilla"
+  ];
 }

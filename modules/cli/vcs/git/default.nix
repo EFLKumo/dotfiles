@@ -6,36 +6,31 @@
   userProtectedEmail,
   ...
 }:
-lib.my.makeHomeProgramConfig {
+lib.my.makeHomeProgramsConfig {
   inherit config;
-  programName = "git";
   optionPath = [
     "cli"
     "vcs"
     "git"
   ];
 
-  extraConfig = {
-    my.home = {
-      programs.git = {
-        enable = true;
-        userName = "${userFullName}";
-        userEmail = "${userProtectedEmail}";
+  programs = {
+    git = {
+      userName = "${userFullName}";
+      userEmail = "${userProtectedEmail}";
 
-        signing = {
-          format = "ssh";
-          key = "/persistent/home/${username}/.ssh/github_ed25519.pub";
-          signByDefault = true;
-        };
-
-        extraConfig = {
-          push.autoSetupRemote = true;
-          init.defaultBranch = "main";
-        };
+      signing = {
+        format = "ssh";
+        key = "/persistent/home/${username}/.ssh/github_ed25519.pub";
+        signByDefault = true;
       };
-      programs.lazygit = {
-        enable = true;
+
+      extraConfig = {
+        push.autoSetupRemote = true;
+        init.defaultBranch = "main";
       };
     };
+
+    lazygit = { };
   };
 }

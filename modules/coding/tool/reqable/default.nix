@@ -15,9 +15,5 @@ lib.my.makeHomePackageConfig {
     "tool"
     "reqable"
   ];
-  extraConfig = {
-    my.persist.homeDirs = [
-      ".local/share/com.reqable.linux"
-    ];
-  };
+  persistHomeDirs = [ ".local/share/com.reqable.linux" ];
 }

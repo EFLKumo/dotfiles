@@ -12,50 +12,47 @@ lib.my.makeHomeProgramConfig {
     "editor"
     "neovim"
   ];
-  extraConfig = {
-    my.home = {
-      xdg.configFile."nvim/init.lua".source = ./nvim/init.lua;
-      xdg.configFile."nvim/lua" = {
-        source = ./nvim/lua;
-        recursive = true;
-      };
-      programs.neovim = {
-        enable = true;
-        defaultEditor = true;
-        viAlias = true;
-        vimAlias = true;
-        vimdiffAlias = true;
-        extraPackages = with pkgs; [
-          gcc
-          gnumake
 
-          pyright
+  persistHomeDirs = [ ".local/share/nvim" ];
 
-          clang-tools
+  programConfig = {
+    defaultEditor = true;
+    viAlias = true;
+    vimAlias = true;
+    vimdiffAlias = true;
+    extraPackages = with pkgs; [
+      gcc
+      gnumake
 
-          rust-analyzer
-          pest-ide-tools
+      pyright
 
-          nixd
+      clang-tools
 
-          gotools
-          gopls
+      rust-analyzer
+      pest-ide-tools
 
-          stylua
-          lua-language-server
+      nixd
 
-          nodePackages.vscode-langservers-extracted
-          nodePackages.typescript-language-server
-          vue-language-server
-          typescript
-          nodejs
+      gotools
+      gopls
 
-          ripgrep
-        ];
-      };
-    };
-    my.persist.homeDirs = [
-      ".local/share/nvim"
+      stylua
+      lua-language-server
+
+      nodePackages.vscode-langservers-extracted
+      nodePackages.typescript-language-server
+      vue-language-server
+      typescript
+      nodejs
+
+      ripgrep
     ];
+  };
+
+  configFiles = {
+    "nvim/init.lua" = ./nvim/init.lua;
+  };
+  configDirs = {
+    "nvim/lua" = ./nvim/lua;
   };
 }

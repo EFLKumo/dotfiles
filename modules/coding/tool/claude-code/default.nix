@@ -13,10 +13,8 @@ lib.my.makeHomePackageConfig {
     "tool"
     "claude-code"
   ];
-  extraConfig = {
-    my.persist.homeDirs = [
-      ".claude"
-      ".claude-code-router" # npm: claude-code-router
-    ];
-  };
+  persistHomeDirs = [
+    ".claude"
+    ".claude-code-router" # npm: claude-code-router
+  ];
 }

@@ -14,20 +14,20 @@ lib.my.makeHomeProgramConfig {
     "vcs"
     "jj"
   ];
+  programConfig = {
+    settings = {
+      user = {
+        name = "${userFullName}";
+        email = "${userProtectedEmail}";
+      };
+      ui = {
+        default-command = "status";
+      };
+    };
+  };
 
   extraConfig = {
     my.home = {
-      programs.jujutsu = {
-        settings = {
-          user = {
-            name = "${userFullName}";
-            email = "${userProtectedEmail}";
-          };
-          ui = {
-            default-command = "status";
-          };
-        };
-      };
       home.packages = [ pkgs.lazyjj ];
 
       /*
