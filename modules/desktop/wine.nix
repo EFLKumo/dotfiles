@@ -6,25 +6,20 @@
 }:
 lib.my.makeSwitch {
   inherit config;
-  optionName = "minecraft";
+  default = true;
+  optionName = "wine";
   optionPath = [
     "desktop"
-    "gaming"
-    "minecraft"
+    "wine"
   ];
   config' = {
     my.home.home.packages = with pkgs; [
-      hmcl
-
-      openjdk21
+      wineWayland
+      proton-ge-custom
+      bottles
     ];
-
     my.persist.homeDirs = [
-      ".minecraft"
-      ".local/share/hmcl"
-    ];
-    my.persist.homeFiles = [
-      ".hmcl.json"
+      ".local/share/bottles"
     ];
   };
 }

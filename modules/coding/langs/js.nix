@@ -25,6 +25,9 @@ lib.my.makeSwitch {
         prefix = ''${HOME}/.npm-global
         registry = https://registry.npmmirror.com
       '';
+      programs.zsh.initContent = lib.mkAfter ''
+        export PATH=$PATH:$HOME/.npm-global/bin
+      '';
     };
     my.persist.homeDirs = [
       ".bun"

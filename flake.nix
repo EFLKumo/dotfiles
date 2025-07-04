@@ -52,6 +52,9 @@
     # zen browser
     zen-browser.url = "github:0xc000022070/zen-browser-flake";
     zen-browser.inputs.nixpkgs.follows = "nixpkgs";
+
+    infuse.url = "git+https://codeberg.org/amjoseph/infuse.nix";
+    infuse.flake = false;
   };
 
   outputs =

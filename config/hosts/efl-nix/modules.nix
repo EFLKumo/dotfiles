@@ -96,6 +96,7 @@
       };
       style.enable = true;
       quickshell.enable = true;
+      wine.enable = true;
     };
     gpg.enable = true;
     i18n.fcitx5.enable = true;

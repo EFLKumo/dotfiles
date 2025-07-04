@@ -17,17 +17,8 @@
       ayugram-desktop
       telegram-desktop
       signal-desktop
-      (master.qq.overrideAttrs (
-        final: prev: {
-          preInstall =
-            prev.preInstall or ""
-            + ''
-              gappsWrapperArgs+=(
-                --add-flags "\''${NIXOS_OZONE_WL:+\''${WAYLAND_DISPLAY:+--wayland-text-input-version=3}}"
-              )
-            '';
-        }
-      ))
+      qq
+      wechat
 
       gnome-clocks
 
@@ -128,34 +119,23 @@
         ".android"
         "Android"
 
-        {
-          directory = ".ssh";
-          mode = "0700";
-        }
-
         "bin"
         "workspace"
         "Downloads"
-        "WineApps"
         "Virt"
 
         ".cache"
         ".local/state"
         ".local/share/Anki2"
         ".local/share/cheat.sh"
-        ".local/share/dooit"
         ".local/share/Kingsoft"
-        ".local/share/nvim"
-        ".local/share/oss.krtirtho.spotube"
         ".local/share/shotwell"
-        ".local/share/Steam"
-        ".local/share/SteamOS"
-        ".local/share/Trash"
 
         ".local/share/AyuGramDesktop"
         ".local/share/TelegramDesktop"
         ".config/Signal"
         ".config/QQ"
+        ".xwechat"
 
         ".config/sops"
         ".config/Kingsoft"
@@ -163,21 +143,9 @@
         ".config/gh"
         ".config/pulse"
         ".config/chromium"
-        ".config/go-musicfox/db"
         ".config/pip"
-        ".config/obs-studio"
         ".config/libreoffice"
-        ".config/Moonlight Game Streaming Project"
         ".config/sunshine"
-      ];
-      nixosDirs = [
-        "/etc/ssh"
-        "/etc/NetworkManager/system-connections"
-      ];
-      homeFiles = [
-        ".config/mpd/mpd.db" # requires bindfs
-        ".config/go-musicfox/cookie"
-        ".hmcl.json"
       ];
     };
   };

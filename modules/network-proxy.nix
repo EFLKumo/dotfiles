@@ -22,7 +22,10 @@ lib.my.makeSwitch {
       enable = true;
       configFile = config.sops.secrets.dae.path;
     };
-    systemd.services.dae.after = [ "sops-nix.service" ];
+    systemd.services.dae.after = [
+      "sops-nix.service"
+    ];
+
     sops.secrets.mihomo = {
       sopsFile = sopsRoot + /mihomo.yaml;
       format = "yaml";
@@ -37,7 +40,7 @@ lib.my.makeSwitch {
       wants = [ "network-online.target" ];
     };
     services.mihomo = {
-      enable = true;
+      enable = false;
       configFile = config.sops.secrets.mihomo.path;
       tunMode = true;
       webui = pkgs.metacubexd;
