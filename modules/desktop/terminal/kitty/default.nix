@@ -26,8 +26,9 @@ lib.my.makeHomeProgramConfig {
         name = "monospace";
         size = 14;
       };
+      shellIntegration.mode = "no-cursor no-sudo";
       extraConfig = ''
-        include ${./colors/everforest.conf}
+        include ${./colors/tokyonight-storm.conf}
       '';
     };
   };

@@ -40,9 +40,9 @@ lib.my.makeSwitch {
       wants = [ "network-online.target" ];
     };
     services.mihomo = {
-      enable = false;
+      enable = true;
       configFile = config.sops.secrets.mihomo.path;
-      tunMode = true;
+      tunMode = false;
       webui = pkgs.metacubexd;
     };
   };

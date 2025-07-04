@@ -4,18 +4,20 @@
   pkgs,
   ...
 }:
-lib.my.makeHomePackageConfig {
-  inherit config pkgs;
-  packageName = "go";
-  packagePath = [ "go" ];
+lib.my.makeSwitch {
+  inherit config;
+  optionName = "go";
   optionPath = [
     "coding"
     "langs"
     "go"
   ];
-  extraConfig = {
+  config' = {
     my.persist.homeDirs = [
       "go"
+    ];
+    my.home.home.packages = with pkgs; [
+      gopls
     ];
   };
 }
