@@ -1,40 +1,31 @@
-{ inputs, ... }:
+{ inputs, infuse, ... }:
 {
   additions = final: prev: import ../pkgs prev;
 
-  modifications = final: prev: {
-    cage = prev.cage.overrideAttrs (old: {
-      patches = (old.patches or [ ]) ++ [ ./cage-specify-output-name.patch ];
-    });
+  modifications =
+    final: prev:
+    infuse prev {
+      cage.__output.patches.__append = [ ./cage-specify-output-name.patch ];
+      bottles.__input.removeWarningPopup.__assign = true;
+      qq.__output.preInstall.__append = ''
+        gappsWrapperArgs+=(
+          --add-flags "\''${NIXOS_OZONE_WL:+\''${WAYLAND_DISPLAY:+--wayland-text-input-version=3}}"
+        )
+      '';
 
-    matrix-synapse = final.stable.matrix-synapse;
-
-    bottles = prev.bottles.override {
-      removeWarningPopup = true;
+      sing-box.__assign = prev.sing-box.overrideAttrs (finalAttrs: {
+        version = "1.11.14";
+        src = final.fetchFromGitHub {
+          owner = "qjebbs";
+          repo = "sing-box";
+          # due to faulty tag generation
+          tag = "v${finalAttrs.version}+rev";
+          hash = "sha256-/p2PBTeeRJW3iq/BXJlw/Qn92Nrnw9fmUn5yNGl/o34=";
+        };
+        vendorHash = "sha256-C2HCNOzP1Jg3vz2i9uPmM1wC7Sw2YNt7MdYn939cu1Y=";
+        postInstall = "";
+      });
     };
-
-    qq = prev.qq.overrideAttrs (old: {
-      preInstall =
-        (old.preInstall or "")
-        + ''
-          gappsWrapperArgs+=(
-            --add-flags "\''${NIXOS_OZONE_WL:+\''${WAYLAND_DISPLAY:+--wayland-text-input-version=3}}"
-          )
-        '';
-    });
-
-    sing-box = prev.sing-box.overrideAttrs (old: {
-      version = "unstable-2024-08-16";
-      src = final.fetchFromGitHub {
-        owner = "PuerNya";
-        repo = "sing-box";
-        rev = "067c81a73e1fb7b6edbc58e6b06b8b943fa6c40a";
-        hash = "sha256-03mkClYVAfAatfYJ1OuM1OvABj/fgbseqK8jPbBtI8g=";
-      };
-      vendorHash = "sha256-ZWFZkVRtybQAK9oZRIMBGeDfxXTV7kzXwNSbkvslMFk=";
-      postInstall = "";
-    });
-  };
 
   # this allows us to access specific version of nixpkgs
   # by `pkgs.unstable`, `pkgs.stable` and `pkgs.master`

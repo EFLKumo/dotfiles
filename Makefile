@@ -26,12 +26,12 @@ switch:
 
 switch-remote:
 	@echo "🔗 Rebuilding NixOS using remote server..."
-	@nixos-rebuild switch --flake . --sudo --json --build-host nixremote@10.10.10.1 |& nom
+	@nh os switch . -- --option builders ssh-ng://nixremote@10.10.10.1
 	@echo "🎉 Done."
 
 switch-offline:
 	@echo "🔨 Rebuilding NixOS without Internet..."
-	@nixos-rebuild switch --flake  . --no-net --sudo --json |& nom
+	@nh os switch . -- --no-net
 	@echo "🎉 Done."
 
 switch-nobuild:
@@ -41,7 +41,7 @@ switch-nobuild:
 
 switch-slow:
 	@echo "🔨 Rebuilding NixOS with limited cores..."
-	@nixos-rebuild switch --flake . -j 2 --sudo --json |& nom
+	@nh os switch . -- -j 2
 
 boot:
 	@echo "🔨 Rebuilding NixOS..."

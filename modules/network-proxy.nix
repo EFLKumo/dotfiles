@@ -45,5 +45,12 @@ lib.my.makeSwitch {
       tunMode = false;
       webui = pkgs.metacubexd;
     };
+
+    services.sing-box = {
+      enable = false;
+      settings = {
+
+      };
+    };
   };
 }

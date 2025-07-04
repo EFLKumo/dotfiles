@@ -80,6 +80,7 @@
           inherit (inputs.home-manager.lib) hm;
         }
       );
+      infuse = (import inputs.infuse { inherit (nixpkgs) lib; }).v1.infuse;
     in
     {
       packages = forAllSystems (system: import ./pkgs nixpkgs.legacyPackages.${system});
@@ -104,7 +105,7 @@
         }
       );
 
-      overlays = import ./overlays { inherit inputs; };
+      overlays = import ./overlays { inherit inputs infuse; };
 
       nixosConfigurations = forAllHosts (
         hostname:
