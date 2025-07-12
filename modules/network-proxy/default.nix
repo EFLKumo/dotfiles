@@ -46,11 +46,12 @@ lib.my.makeSwitch {
       webui = pkgs.metacubexd;
     };
 
+    sops.secrets.sing-box-url = {
+      sopsFile = sopsRoot + /sing-box-url.txt;
+    };
     services.sing-box = {
       enable = false;
-      settings = {
-
-      };
+      # settings = import ./sing-box.nix config.sops.secrets.sing-box-url.path;
     };
   };
 }

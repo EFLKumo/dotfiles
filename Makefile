@@ -67,7 +67,7 @@ replpkgs:
 	@nix repl -f flake:nixpkgs
 
 repl:
-	@nh os repl .
+	@nixos-rebuild repl --flake .
 
 cleandry:
 	@echo "🗑️ Listing all generations older than 15 days..."

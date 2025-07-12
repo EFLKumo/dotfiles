@@ -12,7 +12,7 @@ lib.my.makeHomeProgramConfig {
     "browser"
     "zen"
   ];
-  programsConfig = {
+  programConfig = {
     policies = {
       DisableAppUpdate = true;
       DisableTelemetry = true;

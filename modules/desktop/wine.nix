@@ -4,7 +4,7 @@
   pkgs,
   ...
 }:
-lib.my.makeHomePackageConfig {
+lib.my.makeHomePackagesConfig {
   inherit config pkgs;
   optionPath = [
     "desktop"
