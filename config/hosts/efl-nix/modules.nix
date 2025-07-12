@@ -44,6 +44,7 @@
         lua.enable = true;
         sqlite.enable = true;
         nix.enable = true;
+        qml.enable = false;
       };
       tool = {
         reqable.enable = true;

@@ -41,24 +41,26 @@ lib.my.makeSwitch {
       killall
     ];
 
-    programs.zsh.enable = true;
     programs.dconf.enable = true;
 
     my.home = {
       programs.home-manager.enable = true;
+      programs.tealdeer = {
+        enable = true;
+        enableAutoUpdates = true;
+        settings.updates.auto_update = true;
+      };
 
       home.packages = with pkgs; [
         lsd
         fd
-        neofetch
+        fastfetch
         fzf
         bat
         ripgrep
 
         aria2
         socat
-
-        cht-sh
 
         # translate-shell
       ];
