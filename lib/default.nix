@@ -173,11 +173,12 @@
       ];
     };
 
-  makeNixosProgramConfig =
+  makeNixOSProgramConfig =
     {
       config,
-      programName,
+      programName ? builtins.elemAt optionPath (builtins.length optionPath - 1),
       optionPath,
+      programConfig ? { },
       extraConfig ? { },
     }:
     lib.my.makeSwitch {
@@ -186,7 +187,7 @@
 
       config' = lib.mkMerge [
         {
-          programs = lib.setAttrByPath [ programName "enable" ] true;
+          programs = lib.setAttrByPath [ programName ] (programConfig // { enable = true; });
         }
         extraConfig
       ];

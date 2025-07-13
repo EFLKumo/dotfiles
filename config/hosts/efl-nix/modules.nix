@@ -3,6 +3,7 @@
 }:
 {
   my = {
+    nix-ld.enable = true;
     remote-build.enable = true;
     network-proxy.enable = true;
     cli = {
