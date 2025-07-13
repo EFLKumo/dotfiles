@@ -8,6 +8,7 @@
     network-proxy.enable = true;
     cli = {
       media = {
+        baidupcs-go.enable = true;
         cava.enable = true;
         go-musicfox.enable = true;
         mpd.enable = true;
@@ -16,6 +17,7 @@
       misc.enable = true;
       monitor = {
         btop.enable = true;
+        dysk.enable = true;
       };
       shell = {
         zsh.enable = true;
