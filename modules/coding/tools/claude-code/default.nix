@@ -10,7 +10,7 @@ lib.my.makeHomePackageConfig {
   packagePath = [ "claude-code" ];
   optionPath = [
     "coding"
-    "tool"
+    "tools"
     "claude-code"
   ];
   persistHomeDirs = [

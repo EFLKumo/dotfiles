@@ -6,14 +6,13 @@
 }:
 lib.my.makeHomePackageConfig {
   inherit config pkgs;
-  packageName = "reqable";
+  packageName = "asar";
   packagePath = [
-    "reqable"
+    "asar"
   ];
   optionPath = [
     "coding"
-    "tool"
-    "reqable"
+    "tools"
+    "asar"
   ];
-  persistHomeDirs = [ ".local/share/com.reqable.linux" ];
 }

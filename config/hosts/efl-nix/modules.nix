@@ -46,11 +46,12 @@
         nix.enable = true;
         qml.enable = false;
       };
-      tool = {
+      tools = {
         reqable.enable = true;
         asar.enable = true;
         package-version-server.enable = true;
-        claude-code.enable = true;
+        claude-code.enable = false;
+        gemini-cli.enable = true;
       };
       misc.enable = true;
     };

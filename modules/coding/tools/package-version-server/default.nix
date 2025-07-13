@@ -12,7 +12,7 @@ lib.my.makeHomePackageConfig {
   ];
   optionPath = [
     "coding"
-    "tool"
+    "tools"
     "package-version-server"
   ];
 }
