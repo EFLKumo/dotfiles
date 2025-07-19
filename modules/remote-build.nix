@@ -25,10 +25,8 @@ lib.my.makeSwitch {
       enable = true;
       script = "${pkgs.easytier}/bin/easytier-core -c ${config.sops.secrets.et-nixremote.path}";
       serviceConfig = {
-        Restart = lib.mkOverride 500 "always";
-        RestartMaxDelaySec = lib.mkOverride 500 "1m";
-        RestartSec = lib.mkOverride 500 "100ms";
-        RestartSteps = lib.mkOverride 500 9;
+        Restart = "always";
+        RestartSec = 30;
         User = "root";
       };
       wantedBy = [ "multi-user.target" ];
