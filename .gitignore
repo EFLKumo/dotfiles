@@ -1,4 +1,2 @@
-secrets/origin/mihomo.yaml
-secrets/origin/peers.toml
-secrets/origin/sing-box-url.txt
+secrets/origin
 # modules/desktop/wm/wallpaper.jpg

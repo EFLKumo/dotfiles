@@ -41,6 +41,9 @@
     stylix.url = "github:danth/stylix";
     stylix.inputs.nixpkgs.follows = "nixpkgs";
 
+    # dae & daed
+    daeuniverse.url = "github:daeuniverse/flake.nix";
+
     # go-musicfox
     go-musicfox.url = "github:imxyy1soope1/go-musicfox/master";
     go-musicfox.inputs.nixpkgs.follows = "nixpkgs";
@@ -198,6 +201,7 @@
               (lib.mkAliasOptionModule [ "my" "home" ] [ "home-manager" "users" vars.username ])
               ./config/base.nix
               ./config/hosts/${hostname}
+              inputs.daeuniverse.nixosModules.dae
               inputs.chaotic.nixosModules.default
               inputs.sops-nix.nixosModules.sops
               inputs.impermanence.nixosModules.impermanence

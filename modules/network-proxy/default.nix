@@ -1,7 +1,6 @@
 {
   config,
   lib,
-  pkgs,
   sopsRoot,
   ...
 }:
@@ -15,9 +14,11 @@ lib.my.makeSwitch {
 
   config' = {
     sops.secrets.dae = {
-      sopsFile = sopsRoot + /dae.dae;
+      path = "/etc/dae/config.dae";
+      sopsFile = sopsRoot + /config.dae;
       format = "binary";
     };
+
     services.dae = {
       enable = true;
       configFile = config.sops.secrets.dae.path;
@@ -26,24 +27,6 @@ lib.my.makeSwitch {
       "sops-nix.service"
     ];
 
-    sops.secrets.mihomo = {
-      sopsFile = sopsRoot + /mihomo.yaml;
-      format = "yaml";
-      key = "";
-    };
-    systemd.services.mihomo = {
-      after = [
-        "network.target"
-        "network-online.target"
-        "sops-nix.service"
-      ];
-      wants = [ "network-online.target" ];
-    };
-    services.mihomo = {
-      enable = true;
-      configFile = config.sops.secrets.mihomo.path;
-      tunMode = false;
-      webui = pkgs.metacubexd;
-    };
+    my.persist.nixosDirs = [ "/etc/dae" ];
   };
 }
