@@ -97,6 +97,24 @@ lib.my.makeSwitch {
         ignoreUserConfig = true;
       };
     };
+    nixpkgs.overlays = [
+      (
+        final: prev:
+        lib.infuse prev (
+          lib.mergeAttrsList (
+            map
+              (pkg: {
+                ${pkg}.__input.commandLineArgs.__append = "--wayland-text-input-version=3";
+              })
+              [
+                "qq"
+                "vscodium"
+                "signal-desktop"
+              ]
+          )
+        )
+      )
+    ];
     my.home.programs.niri.settings = {
       binds."Mod+Space".action.spawn = [
         "fcitx5-remote"

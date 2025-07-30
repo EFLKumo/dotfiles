@@ -16,4 +16,5 @@ lib.my.makeHomeProgramConfig {
     ".config/zed"
     ".local/share/zed"
   ];
+  extraConfig.my.home.programs.zsh.shellAliases.zed = "zeditor";
 }

@@ -51,6 +51,11 @@ lib.my.makeSwitch {
         settings.updates.auto_update = true;
       };
 
+      programs.television = {
+        enable = true;
+        enableZshIntegration = true;
+      };
+
       home.packages = with pkgs; [
         lsd
         fd
