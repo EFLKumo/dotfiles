@@ -21,9 +21,6 @@
       wechat
 
       gnome-clocks
-
-      wineWowPackages.waylandFull
-      pwvucontrol
     ];
 
     programs.zsh = {
@@ -125,7 +122,6 @@
         ".cache"
         ".local/state"
         ".local/share/Anki2"
-        ".local/share/cheat.sh"
         ".local/share/Kingsoft"
         ".local/share/shotwell"
 
@@ -138,10 +134,8 @@
         ".config/sops"
         ".config/Kingsoft"
         ".config/dconf"
-        ".config/gh"
         ".config/chromium"
         ".config/pip"
-        ".config/libreoffice"
         ".config/sunshine"
       ];
     };

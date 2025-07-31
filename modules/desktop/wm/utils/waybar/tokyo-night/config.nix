@@ -103,25 +103,12 @@
   };
 
   wireplumber = {
-    format = "{icon} {volume}%";
+    format = "󰋋 {volume}%";
     tooltip = false;
     format-muted = "󰟎 Muted";
     on-click = "wpctl set-mute @DEFAULT_SINK@ toggle";
     on-click-middle = "pwvucontrol";
     scroll-step = 5;
-    format-icons = {
-      headphone = "󰋋";
-      hands-free = "󰋋";
-      headset = "󰋋";
-      phone = "";
-      portable = "";
-      car = "";
-      default = [
-        ""
-        ""
-        ""
-      ];
-    };
   };
 
   "wireplumber#source" = {
