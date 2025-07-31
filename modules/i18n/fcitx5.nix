@@ -110,6 +110,7 @@ lib.my.makeSwitch {
                 "qq"
                 "vscodium"
                 "signal-desktop"
+                "obsidian"
               ]
           )
         )
