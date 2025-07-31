@@ -9,7 +9,6 @@
     cli = {
       media = {
         baidupcs-go.enable = true;
-        cava.enable = true;
         go-musicfox.enable = true;
         mpd.enable = true;
         ffmpeg.enable = true;
