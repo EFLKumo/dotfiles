@@ -23,9 +23,7 @@
       gnome-clocks
 
       wineWowPackages.waylandFull
-
-      pavucontrol
-      pamixer
+      pwvucontrol
     ];
 
     programs.zsh = {
@@ -141,7 +139,6 @@
         ".config/Kingsoft"
         ".config/dconf"
         ".config/gh"
-        ".config/pulse"
         ".config/chromium"
         ".config/pip"
         ".config/libreoffice"
