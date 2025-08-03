@@ -16,6 +16,7 @@ lib.my.makeHomePackagesConfig {
     [ "pnpm" ]
     [ "bun" ]
     [ "typescript" ]
+    [ "biome" ]
   ];
 
   persistHomeDirs = [

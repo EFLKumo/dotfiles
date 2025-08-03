@@ -47,12 +47,13 @@ in
           };
         };
         gtk.gtk3.bookmarks = [
-          "file://${homedir}/Documents 文档"
-          "file://${homedir}/Downloads 下载"
-          "file://${homedir}/Pictures 图片"
-          "file://${homedir}/Videos 视频"
-          "file://${homedir}/Music 音乐"
-          "file://${homedir}/workspace 工作空间"
+          "file://${homedir}/Documents Documents"
+          "file://${homedir}/Downloads Downloads"
+          "file://${homedir}/Pictures Pictures"
+          "file://${homedir}/Videos Videos"
+          "file://${homedir}/Music Music"
+          "file://${homedir}/workspace Workspace"
+          "file://${homedir}/dev Dev"
         ];
       };
   };

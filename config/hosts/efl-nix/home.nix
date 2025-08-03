@@ -116,6 +116,7 @@
 
         "bin"
         "workspace"
+        "dev"
         "Downloads"
         "Virt"
 
@@ -130,6 +131,7 @@
         ".config/Signal"
         ".config/QQ"
         ".xwechat"
+        "Documents/xwechat_files"
 
         ".config/sops"
         ".config/Kingsoft"
