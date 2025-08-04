@@ -29,8 +29,8 @@
 
     # Niri
     niri.url = "github:sodiboo/niri-flake";
-    niri.inputs.nixpkgs.follows = "nixpkgs";
-    niri.inputs.nixpkgs-stable.follows = "nixpkgs-stable";
+    # niri.inputs.nixpkgs.follows = "nixpkgs";
+    # niri.inputs.nixpkgs-stable.follows = "nixpkgs-stable";
 
     quickshell.url = "git+https://git.outfoxxed.me/outfoxxed/quickshell";
     quickshell.inputs.nixpkgs.follows = "nixpkgs";
@@ -187,7 +187,8 @@
               hostname
               ;
             sopsRoot = ./secrets;
-          } // vars;
+          }
+          // vars;
           modules =
             (lib.umport {
               paths = [ ./modules ];
