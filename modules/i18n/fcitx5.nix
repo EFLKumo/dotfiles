@@ -100,17 +100,42 @@ lib.my.makeSwitch {
     nixpkgs.overlays = [
       (
         final: prev:
-        lib.infuse prev (
-          lib.genAttrs
+        lib.mergeAttrsList (
+          map
+            (
+              { pkg, exe }:
+              {
+                ${pkg} = final.stdenvNoCC.mkDerivation {
+                  pname = prev.${pkg}.pname;
+                  version = prev.${pkg}.version;
+                  src = prev.${pkg};
+                  nativeBuildInputs = [ final.makeWrapper ];
+                  installPhase = ''
+                    cp -r . $out
+                    mv $out/bin/${exe} $out/bin/.${exe}-old
+                    makeWrapper $out/bin/.${exe}-old $out/bin/${exe} --add-flags "\''${NIXOS_OZONE_WL:+\''${WAYLAND_DISPLAY:+--wayland-text-input-version=3}}"
+                  '';
+                };
+              }
+            )
             [
-              "qq"
-              "vscodium"
-              "signal-desktop"
-              "obsidian"
+              {
+                pkg = "qq";
+                exe = "qq";
+              }
+              {
+                pkg = "vscodium";
+                exe = "codium";
+              }
+              {
+                pkg = "signal-desktop";
+                exe = "signal-desktop";
+              }
+              {
+                pkg = "obsidian";
+                exe = "obsidian";
+              }
             ]
-            (_: {
-              __input.commandLineArgs.__append = "--wayland-text-input-version=3";
-            })
         )
       )
       (

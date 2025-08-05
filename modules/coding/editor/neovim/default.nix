@@ -39,7 +39,6 @@ lib.my.makeHomeProgramConfig {
       stylua
       lua-language-server
 
-      nodePackages.vscode-langservers-extracted
       nodePackages.typescript-language-server
       vue-language-server
       typescript
