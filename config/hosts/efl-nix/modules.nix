@@ -34,6 +34,7 @@
       editor = {
         neovim.enable = true;
         vscode.enable = true;
+        jadx.enable = true;
         webstorm.enable = false;
         obsidian.enable = true;
         zed-editor.enable = true;
