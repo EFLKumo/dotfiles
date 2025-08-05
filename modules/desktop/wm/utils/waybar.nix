@@ -30,7 +30,7 @@ in
 
       xdg.configFile = {
         "waybar/config.jsonc".text = builtins.toJSON waybarConfig;
-        "waybar/style.css".source = ./waybar/tokyo-night/style.css;
+        #"waybar/style.css".source = ./waybar/tokyo-night/style.css;
       };
     };
   };
