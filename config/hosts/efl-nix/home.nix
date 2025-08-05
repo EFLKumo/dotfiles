@@ -126,8 +126,9 @@
         ".local/share/Kingsoft"
         ".local/share/shotwell"
 
+        ".local/share/org.localsend.localsend_app"
+
         ".local/share/AyuGramDesktop"
-        ".local/share/TelegramDesktop"
         ".config/Signal"
         ".config/QQ"
         ".xwechat"
