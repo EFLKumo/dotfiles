@@ -89,6 +89,26 @@ lib.my.makeSwitch {
           theme = "bira";
         };
         # xdg.configFile."oh-my-zsh-custom/themes/kumo.zsh-theme".source = ./kumo.zsh-theme;
+
+        programs.starship = {
+          enable = true;
+          settings = {
+            directory = {
+              truncate_to_repo = true;
+              truncation_length = 1;
+            };
+            battery.display = [
+              {
+                threshold = 30;
+                style = "bold yellow";
+              }
+              {
+                threshold = 20;
+                style = "bold red";
+              }
+            ];
+          };
+        };
       };
   };
 }
