@@ -15,6 +15,5 @@ lib.my.makeHomePackageConfig {
   ];
   persistHomeDirs = [
     ".claude"
-    ".claude-code-router" # npm: claude-code-router
   ];
 }

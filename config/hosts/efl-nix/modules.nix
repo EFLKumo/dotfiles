@@ -55,7 +55,7 @@
         reqable.enable = true;
         asar.enable = true;
         package-version-server.enable = true;
-        claude-code.enable = false;
+        claude-code.enable = true;
         gemini-cli.enable = true;
       };
       misc.enable = true;

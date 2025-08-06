@@ -77,14 +77,11 @@
           clip-to-geometry = true;
           draw-border-with-background = false;
         }
-        {
-          matches = [ { app-id = "kitty|foot|Alacritty|ghostty|chromium-browser"; } ];
-          opacity = 0.8;
-        }
-        {
-          matches = [ { app-id = "org.gnome.Nautilus|nemo"; } ];
-          opacity = 0.6;
-        }
+        # TODO: uncomment when niri support blur effect
+        #{
+        #  matches = [ { app-id = "kitty|foot|Alacritty|ghostty|chromium-browser"; } ];
+        #  opacity = 0.8;
+        #}
       ];
 
       environment = {
