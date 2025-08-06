@@ -46,6 +46,7 @@
       jetbrains-mono
 
       nerd-fonts.symbols-only
+      maple-mono.variable
     ];
 
     fontconfig.defaultFonts = {
@@ -62,6 +63,7 @@
         "Noto Color Emoji"
       ];
       monospace = [
+        "Maple Mono"
         "JetBrains Mono"
         "Noto Sans Mono CJK SC"
         "Symbols Nerd Font Mono"
